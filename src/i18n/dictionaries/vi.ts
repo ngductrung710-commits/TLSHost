@@ -230,9 +230,9 @@ const vi = {
   },
 
   scale: {
-    eyebrow: "Từ một căn đến cả danh mục",
-    title: "Bắt đầu với một chỗ nghỉ. Lớn lên không phải đổi công cụ.",
-    body: "Cùng một không gian làm việc phục vụ một căn hộ cho thuê hay ba mươi căn villa. Bạn thêm chỗ nghỉ, thêm người, thêm kênh — nền tảng giãn ra theo.",
+    eyebrow: "Từ một mình đến quy mô lớn",
+    title: "Bắt đầu với một căn villa. Lớn lên không giới hạn.",
+    body: "Cùng một không gian làm việc cho một chỗ nghỉ hay cả một danh mục — bạn không bao giờ phải đổi công cụ để phát triển.",
     tiers: [
       {
         label: "Chủ nhà cá nhân",

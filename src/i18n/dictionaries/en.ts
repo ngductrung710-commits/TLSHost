@@ -211,9 +211,9 @@ const en: Dictionary = {
   },
 
   scale: {
-    eyebrow: "From one unit to a portfolio",
-    title: "Start with one property. Grow without changing tools.",
-    body: "The same workspace serves a single rental apartment or thirty villas. Add properties, add people, add channels — the platform stretches with you.",
+    eyebrow: "From solo to serious scale",
+    title: "Start with one villa. Grow without a ceiling.",
+    body: "The same workspace for a single property or a whole portfolio — you never have to change tools to grow.",
     tiers: [
       {
         label: "Solo host",
