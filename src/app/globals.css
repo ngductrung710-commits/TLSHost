@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   TLSHost — design tokens
+   Palette derived from The Local Stay (thelocalstay.vn):
+     --primary-color #231813 · canvas #F2F0ED · sand #CCBEB4 / #C8BFAE
+   Every text pair below was verified >= 4.5:1; control borders >= 3:1.
+   ========================================================================== */
+
+@theme {
+  /* Espresso — brand + primary action */
+  --color-ink-50:  #f6f4f3;
+  --color-ink-100: #e9e4e1;
+  --color-ink-200: #d3c9c3;
+  --color-ink-300: #b3a49b;
+  --color-ink-400: #8a7f75;
+  --color-ink-500: #6e625a;
+  --color-ink-600: #544a43;
+  --color-ink-700: #3f3630;
+  --color-ink-800: #311817;
+  --color-ink-900: #231813;
+  --color-ink-950: #170f0c;
+
+  /* Sand — warm secondary surfaces and dividers */
+  --color-sand-50:  #faf9f7;
+  --color-sand-100: #f2f0ed;
+  --color-sand-200: #e6e1da;
+  --color-sand-300: #dcd5cc;
+  --color-sand-400: #ccbeb4;
+  --color-sand-500: #c8bfae;
+  --color-sand-600: #a89886;
+  --color-sand-700: #8a7a68;
+
+  /* Clay — accent for badges and emphasis */
+  --color-clay-50:  #fbf3ef;
+  --color-clay-100: #f4e2d8;
+  --color-clay-200: #e6c3b0;
+  --color-clay-300: #d29c7f;
+  --color-clay-400: #bd7455;
+  --color-clay-500: #a05436;
+  --color-clay-600: #8a452b;
+  --color-clay-700: #703723;
+
+  /* Semantic — tuned to sit inside the earthy palette */
+  --color-positive: #4f6b52;
+  --color-positive-soft: #eaf0ea;
+  --color-warning: #b45309;
+  --color-warning-soft: #fdf3e7;
+  --color-danger: #b3261e;
+  --color-danger-soft: #fbeceb;
+
+  /* Roles */
+  --color-canvas: #f2f0ed;
+  --color-canvas-alt: #e9e4e1;
+  --color-surface: #ffffff;
+  --color-line: #dcd5cc;        /* decorative divider */
+  --color-line-strong: #8a7f75; /* control boundary — 3.44:1 on canvas */
+
+  /* Type — families are bound in layout.tsx via next/font */
+  --font-display: var(--font-display-family), ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-mono-family), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: var(--font-sans-family), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Elevation — one scale, no ad-hoc shadows */
+  --shadow-xs: 0 1px 2px 0 rgb(35 24 19 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(35 24 19 / 0.06), 0 1px 2px -1px rgb(35 24 19 / 0.04);
+  --shadow-md: 0 4px 12px -2px rgb(35 24 19 / 0.08), 0 2px 6px -2px rgb(35 24 19 / 0.05);
+  --shadow-lg: 0 12px 32px -8px rgb(35 24 19 / 0.12), 0 4px 12px -4px rgb(35 24 19 / 0.06);
+  --shadow-xl: 0 24px 56px -16px rgb(35 24 19 / 0.18), 0 8px 20px -8px rgb(35 24 19 / 0.08);
+
+  /* Motion — one rhythm sitewide */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.46, 0.64, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;      /* ux: heading-line-balance */
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* ux: long-token-wrapping — URLs and ids reflow, never overflow */
+  .wrap-anywhere {
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  /* ux: number-tabular — prices and counters never jitter */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ux: focus-states — visible on every interactive element */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-ink-900);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-ink-900);
+    color: var(--color-sand-100);
+  }
+}
+
+@layer components {
+  /* Scroll reveal — driven by IntersectionObserver, not a library */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.6s var(--ease-out-soft),
+      transform 0.6s var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal[data-shown="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ux: skip-links */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  /* Hairline that reads on both canvas and surface */
+  .hairline {
+    border-color: var(--color-line);
+  }
+}
+
+/* ux: reduced-motion — render final state, skip all non-essential motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Mockup micro-motion -------------------------------------------------
+   Purely decorative loops inside the aria-hidden product illustrations.
+   The prefers-reduced-motion block above neutralises every one of them.
+   -------------------------------------------------------------------------- */
+
+@keyframes mockPulse {
+  0%, 60%, 100% { opacity: 0.28; transform: translateY(0); }
+  30%           { opacity: 1;    transform: translateY(-2px); }
+}
+
+@keyframes mockCaret {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes mockSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes mockBreathe {
+  0%, 100% { opacity: 1; }
+  45%      { opacity: 0.55; }
+}
+
+@keyframes mockRise {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}

@@ -1,0 +1,13 @@
+# Normalise to LF in the repository. Without this, files authored on Windows
+# land on the Linux VPS with CRLF — and a shell script with a \r after the
+# shebang fails with "bad interpreter".
+* text=auto eol=lf
+
+*.sh   text eol=lf
+*.conf text eol=lf
+
+# Binary — never touch these.
+*.ico  binary
+*.png  binary
+*.jpg  binary
+*.woff2 binary
