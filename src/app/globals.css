@@ -370,6 +370,9 @@
     vertical-align: top;
   }
 
+  /* Leaving: quick. Two words at half opacity in the same place are unreadable
+     mush, so the outgoing one clears in a fraction of the time the incoming one
+     takes to arrive, and they barely overlap. */
   .rotator__word {
     grid-area: 1 / 1;
     white-space: nowrap;
@@ -377,15 +380,17 @@
     opacity: 0;
     transform: translateY(-0.3em);
     transition:
-      opacity 0.42s var(--ease-out-soft),
-      transform 0.42s var(--ease-out-soft);
+      opacity 0.16s ease-in,
+      transform 0.16s ease-in;
   }
 
-  /* The incoming word rises into place; the outgoing one lifts away, so the
-     two read as one movement rather than a crossfade in the same spot. */
+  /* Arriving: slower, and held back until the outgoing word has almost gone. */
   .rotator__word[data-active="true"] {
     opacity: 1;
     transform: none;
+    transition:
+      opacity 0.4s var(--ease-out-soft) 0.13s,
+      transform 0.4s var(--ease-out-soft) 0.13s;
   }
 }
 

@@ -44,13 +44,21 @@ export function RotatingHeadline({ rotator }: { rotator: Dictionary["hero"]["rot
           </span>
         ))}
       </span>
-      {rotator.tail ? ` ${rotator.tail}` : ""}{" "}
+      {/* "của bạn," steps back to the body weight so it reads as the joint of
+          the sentence, not part of the claim. The h1 sets 700 for everything
+          in it, so this has to opt out explicitly. */}
+      {rotator.tail ? <span className="font-normal"> {rotator.tail}</span> : null}{" "}
       {/* Inline, not a block. The picker's headlines force the emphasis onto
           its own line because each is written to land on exactly two; this one
           has a frame as wide as its longest word in front of it, so forcing the
           break made three lines and pushed the page down past the reserved
-          height. Left to flow, it wraps into the same two. */}
-      <span className="display-em text-ink-900">{rotator.emphasis}</span>
+          height. Left to flow, it wraps into the same two.
+
+          font-semibold is a drawn weight here, not a synthesised one: 600 was
+          added to the Newsreader load in layout.tsx for exactly this. Going
+          heavier than 600 means loading another weight there first — a browser
+          faking the bold smears the italic badly at this size. */}
+      <span className="display-em font-semibold text-ink-900">{rotator.emphasis}</span>
     </>
   );
 }

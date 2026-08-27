@@ -5,9 +5,9 @@
 const vi = {
   meta: {
     siteName: "TLSHost",
-    tagline: "Phần mềm vận hành cho chủ chỗ nghỉ độc lập",
+    tagline: "Phần mềm vận hành cho chủ nhà độc lập",
     home: {
-      title: "TLSHost — Phần mềm vận hành cho chủ chỗ nghỉ độc lập",
+      title: "TLSHost — Phần mềm vận hành cho chủ nhà độc lập",
       description:
         "Một lịch cho toàn bộ danh mục, kênh OTA tự đồng bộ mỗi giờ, trang đặt phòng riêng không mất hoa hồng, và một trợ lý AI chỉ hành động khi bạn duyệt.",
     },
@@ -27,7 +27,7 @@ const vi = {
     features: "Tính năng",
     pricing: "Bảng giá",
     login: "Đăng nhập",
-    start: "Dùng thử miễn phí",
+    start: "Bắt đầu miễn phí",
     openMenu: "Mở menu điều hướng",
     closeMenu: "Đóng menu điều hướng",
     langLabel: "Chọn ngôn ngữ",
@@ -49,9 +49,9 @@ const vi = {
   },
 
   hero: {
-    eyebrow: "Phần mềm vận hành cho chủ chỗ nghỉ độc lập",
+    eyebrow: "Phần mềm vận hành cho chủ nhà độc lập",
     body: "Một lịch cho mọi chỗ nghỉ. Mọi kênh OTA đồng bộ từng giờ. Một cộng sự AI soạn sẵn việc lặt vặt — và không bao giờ hành động khi chưa có cái gật đầu của bạn.",
-    ctaPrimary: "Dùng thử miễn phí",
+    ctaPrimary: "Bắt đầu miễn phí",
     ctaSecondary: "Xem tính năng",
     notes: [
       "Gói miễn phí",
@@ -324,12 +324,12 @@ const vi = {
   cta: {
     title: "Giành lại quyền kiểm soát cơ ngơi của bạn.",
     body: "Thiết lập chỗ nghỉ đầu tiên và nhận lượt đặt trực tiếp ngay hôm nay. Miễn phí để bắt đầu, không cần thẻ.",
-    primary: "Dùng thử miễn phí",
+    primary: "Bắt đầu miễn phí",
     secondary: "Xem bảng giá",
   },
 
   footer: {
-    tagline: "Phần mềm vận hành cho chủ chỗ nghỉ độc lập.",
+    tagline: "Phần mềm vận hành cho chủ nhà độc lập.",
     productTitle: "Sản phẩm",
     companyTitle: "Công ty",
     legalTitle: "Pháp lý",
