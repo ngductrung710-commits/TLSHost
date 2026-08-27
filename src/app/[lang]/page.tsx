@@ -61,6 +61,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
       <PillarSection
         pillar={t.pillars.calendar}
         icon="calendar"
+        showBullets={false}
         mockup={<CalendarMock t={t} />}
         href={`${features}/calendar`}
         tone="canvas"
@@ -69,6 +70,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
       <PillarSection
         pillar={t.pillars.ai}
         icon="ai"
+        showBullets={false}
         mockup={<AiAssistantMock t={t} />}
         href={features}
         tone="surface"
@@ -78,6 +80,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
       <PillarSection
         pillar={t.pillars.channels}
         icon="channels"
+        showBullets={false}
         mockup={<ChannelSyncMock t={t} />}
         href={features}
         tone="canvas"
@@ -86,6 +89,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
       <PillarSection
         pillar={t.pillars.direct}
         icon="direct"
+        showBullets={false}
         mockup={<DirectBookingMock t={t} />}
         href={features}
         tone="surface"
@@ -95,6 +99,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
       <PillarSection
         pillar={t.pillars.housekeeping}
         icon="housekeeping"
+        showBullets={false}
         mockup={<HousekeepingMock t={t} />}
         href={features}
         tone="canvas"
@@ -105,6 +110,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
       <PillarSection
         pillar={t.pillars.team}
         icon="team"
+        showBullets={false}
         mockup={<TeamPermissionsMock t={t} />}
         href={features}
         tone="surface"
