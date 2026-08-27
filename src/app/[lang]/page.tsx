@@ -33,7 +33,17 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
           <Reveal>
             <SectionHeading
               eyebrow={t.platform.eyebrow}
-              title={t.platform.title}
+              title={
+                <>
+                  {/* The one serif moment on this page outside the hero. It
+                      sits on the opening phrase, which is the half that does
+                      the work: the scale, not the conclusion. */}
+                  <span className="display-em text-clay-500">
+                    {t.platform.titleEmphasis}
+                  </span>{" "}
+                  {t.platform.titleRest}
+                </>
+              }
               body={t.platform.body}
               align="center"
             />

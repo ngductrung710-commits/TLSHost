@@ -146,8 +146,12 @@ const vi = {
 
   platform: {
     eyebrow: "Nền tảng",
-    title: "Hàng trăm đầu việc mỗi ngày. Một người quyết định: bạn.",
-    body: "Bảng tính, sáu tab đăng nhập kênh và một nhóm chat — TLSHost thay tất cả bằng một không gian làm việc duy nhất, tự chạy suốt ngày rồi báo cáo lại cho bạn.",
+    /* The heading is split so the opening phrase can carry the serif italic,
+       the way the hero does. Rendered in page.tsx, not here — a dictionary
+       holds words, not markup. */
+    titleEmphasis: "Hàng trăm",
+    titleRest: "việc mỗi ngày. Một người duyệt: bạn.",
+    body: "TLSHost thay thế bảng tính, các trang đăng nhập kênh và chuỗi tin nhắn bằng một không gian làm việc tự vận hành cả ngày cho bạn.",
   },
 
   pillars: {

@@ -130,8 +130,9 @@ const en: Dictionary = {
 
   platform: {
     eyebrow: "The platform",
-    title: "Hundreds of decisions a day. One approver: you.",
-    body: "A spreadsheet, six channel logins and a group chat — TLSHost replaces all of it with a single workspace that runs all day and reports back to you.",
+    titleEmphasis: "Hundreds",
+    titleRest: "of decisions a day. One approver: you.",
+    body: "TLSHost replaces the spreadsheet, the channel logins and the message threads with one workspace that runs itself all day for you.",
   },
 
   pillars: {
