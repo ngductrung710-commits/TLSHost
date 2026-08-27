@@ -54,7 +54,7 @@ const vi = {
     ctaPrimary: "Dùng thử miễn phí",
     ctaSecondary: "Xem tính năng",
     notes: [
-      "Gói miễn phí trọn đời",
+      "Gói miễn phí",
       "Không cần thẻ tín dụng",
       "Sẵn sàng đón khách trong vài phút",
     ],

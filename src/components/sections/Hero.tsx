@@ -167,20 +167,21 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
                   {t.hero.ctaSecondary}
                 </ButtonLink>
               </div>
-              {/* Three items, not one string joined by separators. As a string
-                  the line broke wherever it ran out of room and stranded the
-                  tail of the last phrase on its own.
+              {/* One row wherever the three fit. They are separate items and
+                  each is nowrap, so a break can only land between them, never
+                  mid-phrase — and the row wraps rather than being clipped by
+                  the hero's overflow-hidden.
 
-                  Below md the three stack and the separators go with them: a
-                  middot left at the end of a stacked line reads as a typo. From
-                  md up the row fits on one line, so the separators earn their
-                  place. */}
-              <ul className="mt-4 flex flex-col items-center gap-1 text-[13.5px] text-ink-500 md:flex-row md:justify-center md:gap-2">
+                  Vietnamese runs long here: at 430px the row measures 471px
+                  against 390px of content, and the type is already at its
+                  floor, so below sm the items stack. The separators go with
+                  them, since a middot ending a stacked line reads as a typo. */}
+              <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[13px] text-ink-500 sm:text-[13.5px]">
                 {t.hero.notes.map((note, i) => (
-                  <li key={note} className="flex items-center gap-2">
+                  <li key={note} className="flex items-center gap-2 whitespace-nowrap">
                     {note}
                     {i < t.hero.notes.length - 1 ? (
-                      <span aria-hidden="true" className="hidden text-ink-300 md:inline">
+                      <span aria-hidden="true" className="hidden text-ink-300 sm:inline">
                         ·
                       </span>
                     ) : null}
