@@ -46,7 +46,7 @@ const en: Dictionary = {
 
   hero: {
     eyebrow: "The operating system for independent hosts",
-    body: "TLSHost brings your calendar, sales channels, housekeeping and payments into one place. Every OTA reconciles itself hourly. An AI assistant drafts the work — and touches nothing until you approve it.",
+    body: "One calendar for every property. Every OTA channel synced hourly. An AI partner that drafts the small stuff — and never acts without your nod.",
     ctaPrimary: "Start free",
     ctaSecondary: "See the platform",
     notes: ["Free forever plan", "No credit card", "Ready for guests in minutes"],

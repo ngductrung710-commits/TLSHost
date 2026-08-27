@@ -50,7 +50,7 @@ const vi = {
 
   hero: {
     eyebrow: "Phần mềm vận hành cho chủ chỗ nghỉ độc lập",
-    body: "TLSHost gom lịch, kênh bán, buồng phòng và thanh toán về cùng một chỗ. Kênh OTA tự khớp mỗi giờ. Trợ lý AI chuẩn bị sẵn từng thao tác — và không đụng vào dữ liệu của bạn cho tới khi bạn bấm duyệt.",
+    body: "Một lịch cho mọi chỗ nghỉ. Mọi kênh OTA đồng bộ từng giờ. Một cộng sự AI soạn sẵn việc lặt vặt — và không bao giờ hành động khi chưa có cái gật đầu của bạn.",
     ctaPrimary: "Dùng thử miễn phí",
     ctaSecondary: "Xem tính năng",
     notes: [
