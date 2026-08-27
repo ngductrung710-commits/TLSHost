@@ -174,8 +174,8 @@ const en: Dictionary = {
     },
     direct: {
       eyebrow: "Direct booking",
-      title: "Your own storefront, and you keep all of it",
-      body: "Every property gets a branded booking page on its own link. Guests pick dates, book, and are confirmed instantly. Direct bookings land in the same calendar as everything else.",
+      title: "Your own storefront, 0% commission",
+      body: "A booking page worth sharing, on a link that is yours. Guests book direct and are confirmed on the spot — you keep all of every booking.",
       bullets: [
         "A booking page carrying your brand",
         "Not one đồng of commission per booking",

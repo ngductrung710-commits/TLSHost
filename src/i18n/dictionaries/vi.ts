@@ -193,8 +193,8 @@ const vi = {
     },
     direct: {
       eyebrow: "Đặt phòng trực tiếp",
-      title: "Cửa hàng của riêng bạn, giữ trọn 100%",
-      body: "Mỗi chỗ nghỉ có một trang đặt phòng mang thương hiệu của bạn trên đường link riêng. Khách chọn ngày, đặt và nhận xác nhận tức thì. Đặt phòng đổ thẳng vào cùng chiếc lịch.",
+      title: "Cửa hàng của riêng bạn, 0% hoa hồng",
+      body: "Trang đặt phòng đẹp trên liên kết của riêng bạn. Khách đặt trực tiếp, xác nhận tức thì — bạn giữ trọn 100% mỗi lượt đặt.",
       bullets: [
         "Trang đặt phòng theo thương hiệu của bạn",
         "Không một đồng hoa hồng trên mỗi lượt đặt",
