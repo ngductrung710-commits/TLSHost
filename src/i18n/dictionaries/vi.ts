@@ -36,19 +36,72 @@ const vi = {
 
   hero: {
     eyebrow: "Phần mềm vận hành cho chủ chỗ nghỉ độc lập",
-    titleLead: "Cả danh mục của bạn",
-    titleEmphasis: "trên một màn hình.",
     body: "TLSHost gom lịch, kênh bán, buồng phòng và thanh toán về cùng một chỗ. Kênh OTA tự khớp mỗi giờ. Trợ lý AI chuẩn bị sẵn từng thao tác — và không đụng vào dữ liệu của bạn cho tới khi bạn bấm duyệt.",
     ctaPrimary: "Dùng thử miễn phí",
     ctaSecondary: "Xem tính năng",
     note: "Gói miễn phí trọn đời · Không cần thẻ tín dụng · Nhận đặt phòng ngay trong ngày đầu",
-    chips: [
-      "Lịch hợp nhất",
-      "Đồng bộ OTA",
-      "Trợ lý AI",
-      "Đặt phòng trực tiếp",
-      "Buồng phòng",
-      "Phân quyền đội ngũ",
+
+    /* The hero picker. Choosing a job rewrites the <h1>, the line under the
+       grid and the status chip, so the headline is the host's own answer
+       rather than ours. Each job carries its own headline: one frame stretched
+       across six jobs reads worse than six written for the job they describe.
+       `id` keys the icon in Hero.tsx — renaming one here needs it renamed there. */
+    pickerTitle: "Bạn muốn TLSHost lo việc gì trước?",
+    jobs: [
+      {
+        id: "calendar",
+        label: "Lịch & đặt phòng",
+        titleLead: "Cả danh mục,",
+        titleEmphasis: "trên một lịch.",
+        line: "Mọi chỗ nghỉ, mọi loại phòng, mọi đêm — trên một bảng.",
+        chipTitle: "Đặt phòng mới",
+        chipNote: "Đã vào lịch · 2 giây trước",
+      },
+      {
+        id: "channels",
+        label: "Đồng bộ kênh OTA",
+        titleLead: "Bán một đêm,",
+        titleEmphasis: "khóa mọi kênh.",
+        line: "iCal hai chiều với mọi OTA lớn, khớp lại mỗi giờ.",
+        chipTitle: "Đồng bộ xong",
+        chipNote: "6 kênh · vừa xong",
+      },
+      {
+        id: "ai",
+        label: "Trợ lý AI vận hành",
+        titleLead: "AI soạn.",
+        titleEmphasis: "Bạn duyệt.",
+        line: "Trả lời khách, báo giá, nhắc việc — soạn sẵn, không tự gửi.",
+        chipTitle: "3 việc chờ duyệt",
+        chipNote: "Chưa gửi đi đâu cả",
+      },
+      {
+        id: "housekeeping",
+        label: "Dọn phòng & bảo trì",
+        titleLead: "Khách đi,",
+        titleEmphasis: "tổ dọn biết ngay.",
+        line: "Lịch dọn tự sinh theo từng lượt trả phòng, giao đúng người.",
+        chipTitle: "Phòng 204 đã sạch",
+        chipNote: "Sẵn sàng đón khách",
+      },
+      {
+        id: "direct",
+        label: "Trang đặt phòng trực tiếp",
+        titleLead: "Khách đặt thẳng,",
+        titleEmphasis: "0% hoa hồng.",
+        line: "Trang đặt phòng tên bạn, nhận thanh toán, đổ về cùng cái lịch.",
+        chipTitle: "Đặt phòng trực tiếp",
+        chipNote: "0% hoa hồng",
+      },
+      {
+        id: "team",
+        label: "Đội ngũ & phân quyền",
+        titleLead: "Giao việc,",
+        titleEmphasis: "đừng giao mật khẩu.",
+        line: "Mỗi người một tài khoản, chỉ thấy đúng phần việc của mình.",
+        chipTitle: "Đã mời lễ tân",
+        chipNote: "Quyền: chỉ xem lịch",
+      },
     ],
   },
 

@@ -221,7 +221,7 @@ function LocaleSwitch({
             href={switchLocalePath(pathname, code)}
             hrefLang={code}
             aria-current={active ? "true" : undefined}
-            className={`flex h-11 min-w-11 items-center justify-center rounded-full px-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] transition-colors ${
+            className={`flex h-11 min-w-11 items-center justify-center rounded-full px-2.5 text-[11px] font-semibold uppercase tracking-[0.07em] transition-colors ${
               active
                 ? "bg-surface text-ink-900 shadow-xs"
                 : "text-ink-500 hover:text-ink-900"

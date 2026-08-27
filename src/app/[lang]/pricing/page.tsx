@@ -87,7 +87,7 @@ export default async function PricingPage(props: PageProps<"/[lang]/pricing">) {
                       }`}
                     >
                       {featured ? (
-                        <span className="absolute -top-3 left-7 rounded-full bg-ink-900 px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-sand-100">
+                        <span className="absolute -top-3 left-7 rounded-full bg-ink-900 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-sand-100">
                           {p.popular}
                         </span>
                       ) : null}

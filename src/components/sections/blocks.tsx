@@ -105,7 +105,7 @@ export function Testimonials({ t }: { t: Dictionary }) {
                   </blockquote>
 
                   <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sand-200 font-mono text-[11px] font-bold text-ink-700">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sand-200 text-[11px] font-bold text-ink-700">
                       {item.name.charAt(0)}
                     </span>
                     <span className="min-w-0">

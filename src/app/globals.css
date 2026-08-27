@@ -90,9 +90,15 @@
   }
 
   h1, h2, h3 {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
+    font-weight: 600;
     text-wrap: balance;      /* ux: heading-line-balance */
-    letter-spacing: -0.015em;
+    letter-spacing: -0.022em;
+  }
+
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
   }
 
   p {
@@ -166,20 +172,32 @@
     border-color: var(--color-line);
   }
 
-  /* Marker-pen underline behind a phrase.
-     Painted as a background gradient rather than an absolutely positioned bar,
-     so the phrase is free to wrap: an absolute bar needs `whitespace-nowrap` to
-     line up, and that nowrap pushed the page into horizontal scroll at 320px.
-     `box-decoration-break: clone` repaints the band on every wrapped line. */
-  .highlight {
-    background-image: linear-gradient(
-      to top,
-      rgb(230 195 176 / 0.7) 0,
-      rgb(230 195 176 / 0.7) 0.3em,
-      transparent 0.3em
-    );
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+  /* The one serif moment in a headline: the phrase the sentence turns on.
+     Newsreader's drawn italic, not a synthesised slant — the difference is
+     visible at display sizes, which is the only place this is used. */
+  .display-em {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+
+  /* Hero picker swap. Applied only after the first choice — see Hero.tsx — so
+     the page-load Reveal is not competing with it. The reduced-motion block
+     below neutralises it along with everything else. */
+  .hero-swap {
+    animation: heroSwap 0.32s var(--ease-out-soft) both;
+  }
+}
+
+@keyframes heroSwap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 

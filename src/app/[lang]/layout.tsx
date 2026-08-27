@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Calistoga, Inter, JetBrains_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, IBM_Plex_Mono, Newsreader } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/site/Footer";
@@ -11,22 +11,35 @@ import "../globals.css";
 /* Every family below ships a `vietnamese` subset — verified against the
    Google Fonts CSS API before it was chosen. */
 
-const display = Calistoga({
+/* Newsreader carries the voice rather than the reading: the wordmark, the
+   figures in the stat and price blocks, and the one emphasised phrase in the
+   hero headline. Loaded with its true italic — that italic is the whole point
+   of choosing it, and a browser-synthesised slant is not the same letterform. */
+const display = Newsreader({
   variable: "--font-display-family",
   subsets: ["latin", "vietnamese"],
-  weight: "400",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const sans = Inter({
+/* Be Vietnam Pro sets everything meant to be read — body, headings, labels,
+   controls. It was drawn around stacked Vietnamese diacritics, which is what
+   most of this site's copy is made of. */
+const sans = Be_Vietnam_Pro({
   variable: "--font-sans-family",
   subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+/* Mono is now reserved for machine data inside the product mockups — ids,
+   dates, room numbers. Labels no longer use it: set in a monospace, uppercase
+   and letterspaced, Vietnamese diacritics fall apart. */
+const mono = IBM_Plex_Mono({
   variable: "--font-mono-family",
   subsets: ["latin", "vietnamese"],
+  weight: ["400", "500"],
   display: "swap",
 });
 

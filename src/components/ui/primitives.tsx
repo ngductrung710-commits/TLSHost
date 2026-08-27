@@ -56,7 +56,7 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`font-mono text-[11px] font-medium uppercase tracking-[0.16em] ${
+      className={`text-[11px] font-semibold uppercase tracking-[0.09em] ${
         tone === "inverse" ? "text-sand-400" : "text-ink-500"
       }`}
     >
@@ -202,7 +202,7 @@ export function Badge({
 
   return (
     <span
-      className={`inline-flex items-center rounded-full px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.14em] ${tones[tone]}`}
+      className={`inline-flex items-center rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] ${tones[tone]}`}
     >
       {children}
     </span>

@@ -41,7 +41,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
 
           {columns.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-500">
+              <h2 className="text-[11px] font-semibold uppercase tracking-[0.09em] text-ink-500">
                 {column.title}
               </h2>
               <ul className="mt-4 space-y-1">
@@ -64,7 +64,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
           <p className="text-sm text-ink-500">
             © {year} {t.meta.siteName}. {t.footer.rights}
           </p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-400">
+          <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-ink-400">
             {t.meta.tagline}
           </p>
         </div>
