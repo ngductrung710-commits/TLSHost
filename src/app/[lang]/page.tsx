@@ -1,4 +1,5 @@
 import { AiAssistantMock } from "@/components/mockups/AiAssistantMock";
+import { CalendarMock } from "@/components/mockups/CalendarMock";
 import { ChannelSyncMock } from "@/components/mockups/ChannelSyncMock";
 import { DirectBookingMock } from "@/components/mockups/DirectBookingMock";
 import { HousekeepingMock } from "@/components/mockups/HousekeepingMock";
@@ -39,34 +40,43 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
         </Container>
       </Section>
 
+      {/* The calendar leads, because it is what the other five feed into.
+          It sends readers to its own deep-dive rather than the features index. */}
+      <PillarSection
+        pillar={t.pillars.calendar}
+        mockup={<CalendarMock t={t} />}
+        href={`${features}/calendar`}
+        tone="canvas"
+      />
+
       <PillarSection
         pillar={t.pillars.ai}
         mockup={<AiAssistantMock t={t} />}
         href={features}
-        tone="canvas"
+        tone="surface"
+        flip
       />
 
       <PillarSection
         pillar={t.pillars.channels}
         mockup={<ChannelSyncMock t={t} />}
         href={features}
-        tone="surface"
-        flip
+        tone="canvas"
       />
 
       <PillarSection
         pillar={t.pillars.direct}
         mockup={<DirectBookingMock t={t} />}
         href={features}
-        tone="canvas"
+        tone="surface"
+        flip
       />
 
       <PillarSection
         pillar={t.pillars.housekeeping}
         mockup={<HousekeepingMock t={t} />}
         href={features}
-        tone="surface"
-        flip
+        tone="canvas"
       />
 
       <ScaleSection locale={locale} t={t} />
