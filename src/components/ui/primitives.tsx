@@ -46,7 +46,16 @@ export function Section({
 /* Type                                                                        */
 /* -------------------------------------------------------------------------- */
 
-/** Small mono label above a heading. Decorative sibling text, never the heading itself. */
+/**
+ * The label above a section heading, set in a bordered pill.
+ *
+ * Sibling text, never the heading itself — a screen reader gets the h2 below
+ * it, and this only says which part of the site the h2 belongs to.
+ *
+ * The inverse tone is for the ink sections. Its border is the sand tint at low
+ * opacity rather than a solid line, because a solid one at this weight reads
+ * as a button on a dark ground.
+ */
 export function Eyebrow({
   children,
   tone = "default",
@@ -56,8 +65,10 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`text-[11px] font-semibold uppercase tracking-[0.09em] ${
-        tone === "inverse" ? "text-sand-400" : "text-ink-500"
+      className={`inline-flex items-center rounded-full border px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] ${
+        tone === "inverse"
+          ? "border-sand-100/25 text-sand-200"
+          : "border-line text-ink-600"
       }`}
     >
       {children}

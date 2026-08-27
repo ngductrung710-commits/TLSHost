@@ -128,7 +128,7 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
           {/* --------------------------------------------------------------- */}
           <div className="max-w-xl">
             <Reveal>
-              <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/70 py-1.5 pl-2.5 pr-4 text-[11px] font-semibold uppercase tracking-[0.09em] text-ink-600">
+              <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/70 py-1.5 pl-2.5 pr-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink-600">
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-clay-100 text-clay-600">
                   <JobIcon id="ai" className="h-3 w-3" />
                 </span>
