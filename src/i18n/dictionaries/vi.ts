@@ -65,13 +65,17 @@ const vi = {
        across six jobs reads worse than six written for the job they describe.
        `id` keys the icon in Hero.tsx — renaming one here needs it renamed there. */
     /* The rotating headline shown before the picker is touched. Its frame is
-       "X của bạn, tự chạy", so every word in it has to be something that
+       "X của bạn, chạy tự động", so every word in it has to be something that
        genuinely runs unattended — which is why the assistant and permissions
-       are not in this list even though they are in the picker below. */
+       are not in this list even though they are in the picker below.
+
+       Keep them short. The frame is one unbreakable box as wide as the longest
+       word, so a long one eats a whole line on its own and tips the headline
+       from two lines to three. */
     rotator: {
-      words: ["Lịch đặt phòng", "Kênh OTA", "Buồng phòng", "Trang đặt phòng"],
+      words: ["Đặt phòng", "Kênh OTA", "Buồng phòng", "Kho phòng"],
       tail: "của bạn,",
-      emphasis: "tự chạy.",
+      emphasis: "chạy tự động.",
     },
 
     pickerTitle: "Bạn muốn TLSHost lo việc gì trước?",
