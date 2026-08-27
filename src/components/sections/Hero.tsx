@@ -3,6 +3,7 @@
 import { useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 
 import { ButtonLink, Container } from "@/components/ui/primitives";
+import { RotatingHeadline } from "@/components/sections/RotatingHeadline";
 import { Reveal } from "@/components/ui/Reveal";
 import { signUpUrl } from "@/lib/links";
 import type { Locale } from "@/i18n/config";
@@ -142,11 +143,20 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
                 360px where the longest lead would otherwise wrap. New copy here
                 wants re-measuring at 320px. */}
             <Reveal delay={60}>
-              <h1 className="mt-6 min-h-[2.2em] text-[1.85rem] leading-[1.1] text-ink-900 min-[360px]:text-[2rem] sm:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem]">
-                <span key={job.id} className={swap}>
-                  {job.titleLead}{" "}
-                  <span className="display-em block text-clay-500">{job.titleEmphasis}</span>
-                </span>
+              <h1 className="mt-6 min-h-[2.4em] text-[1.85rem] leading-[1.1] text-ink-900 min-[360px]:text-[2rem] sm:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem]">
+                {touched ? (
+                  <span key={job.id} className={swap}>
+                    {job.titleLead}{" "}
+                    <span className="display-em block text-clay-500">{job.titleEmphasis}</span>
+                  </span>
+                ) : (
+                  /* Until the visitor picks something, the headline cycles a
+                     word to show the range. Picking replaces it with that job's
+                     own headline and the rotation stops for good — a line that
+                     kept moving after someone answered the question would be
+                     arguing with them. */
+                  <RotatingHeadline rotator={t.hero.rotator} />
+                )}
               </h1>
             </Reveal>
 

@@ -64,6 +64,16 @@ const vi = {
        rather than ours. Each job carries its own headline: one frame stretched
        across six jobs reads worse than six written for the job they describe.
        `id` keys the icon in Hero.tsx — renaming one here needs it renamed there. */
+    /* The rotating headline shown before the picker is touched. Its frame is
+       "X của bạn, tự chạy", so every word in it has to be something that
+       genuinely runs unattended — which is why the assistant and permissions
+       are not in this list even though they are in the picker below. */
+    rotator: {
+      words: ["Lịch đặt phòng", "Kênh OTA", "Buồng phòng", "Trang đặt phòng"],
+      tail: "của bạn,",
+      emphasis: "tự chạy.",
+    },
+
     pickerTitle: "Bạn muốn TLSHost lo việc gì trước?",
     jobs: [
       {

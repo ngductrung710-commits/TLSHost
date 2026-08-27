@@ -356,3 +356,42 @@
   object-fit: contain;
   display: block;
 }
+
+/* --- Rotating headline ----------------------------------------------------
+   Every word occupies the same single grid cell, so the frame is as wide as
+   the longest of them and the text after it never moves. Short words leave a
+   gap before the tail; that is the trade for a tail that stays put, and it is
+   the behaviour asked for.
+   -------------------------------------------------------------------------- */
+
+@layer components {
+  .rotator {
+    display: inline-grid;
+    vertical-align: top;
+  }
+
+  .rotator__word {
+    grid-area: 1 / 1;
+    white-space: nowrap;
+    justify-self: start;
+    opacity: 0;
+    transform: translateY(-0.3em);
+    transition:
+      opacity 0.42s var(--ease-out-soft),
+      transform 0.42s var(--ease-out-soft);
+  }
+
+  /* The incoming word rises into place; the outgoing one lifts away, so the
+     two read as one movement rather than a crossfade in the same spot. */
+  .rotator__word[data-active="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Nothing rotates, so nothing needs to move. */
+@media (prefers-reduced-motion: reduce) {
+  .rotator__word {
+    transition: none;
+  }
+}

@@ -51,6 +51,17 @@ const en: Dictionary = {
     ctaSecondary: "See the platform",
     notes: ["Free forever plan", "No credit card", "Ready for guests in minutes"],
 
+    rotator: {
+      words: [
+        "Your calendar",
+        "Your channels",
+        "Your housekeeping",
+        "Your booking page",
+      ],
+      tail: "",
+      emphasis: "runs itself.",
+    },
+
     pickerTitle: "What should TLSHost take off your plate first?",
     jobs: [
       {
