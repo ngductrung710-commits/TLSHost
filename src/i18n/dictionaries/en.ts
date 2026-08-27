@@ -186,8 +186,8 @@ const en: Dictionary = {
     },
     housekeeping: {
       eyebrow: "Housekeeping",
-      title: "The cleaning team always knows what is next",
-      body: "Every checkout becomes a cleaning task on its own. Staff open their phone and see exactly their assigned rooms, mark clean in one tap, and the board updates immediately.",
+      title: "Housekeeping that runs itself",
+      body: "Staff open their phone and see which rooms need cleaning after checkout. One tap marks a room clean — the whole team sees it at once.",
       bullets: [
         "Flips to needs-cleaning the moment a guest checks out",
         "Phone-first interface, usable one-handed",

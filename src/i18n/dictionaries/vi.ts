@@ -205,8 +205,8 @@ const vi = {
     },
     housekeeping: {
       eyebrow: "Buồng phòng",
-      title: "Đội dọn phòng luôn biết việc kế tiếp",
-      body: "Mỗi lượt trả phòng tự sinh ra một việc cần dọn. Nhân viên mở điện thoại là thấy đúng phần việc của mình, chạm một lần để báo sạch, và bảng lịch cập nhật ngay lập tức.",
+      title: "Dọn phòng tự vận hành",
+      body: "Nhân viên mở điện thoại là thấy ngay phòng nào cần dọn sau trả phòng. Một chạm đánh dấu sạch — cả đội thấy tức thì.",
       bullets: [
         "Tự chuyển sang trạng thái cần dọn ngay khi khách trả phòng",
         "Giao diện thiết kế cho điện thoại, dùng được bằng một tay",
