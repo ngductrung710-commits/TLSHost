@@ -38,7 +38,12 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
                   {/* The one serif moment on this page outside the hero. It
                       sits on the opening phrase, which is the half that does
                       the work: the scale, not the conclusion. */}
-                  <span className="display-em text-clay-500">
+                  {/* Sized in em, not px, so it keeps its proportion across the
+                      three steps of the heading's own scale. Newsreader also
+                      sits optically smaller than Be Vietnam Pro at the same
+                      nominal size, so part of this is closing that gap rather
+                      than making the phrase loud. */}
+                  <span className="display-em text-[1.22em] leading-[0.9] text-clay-500">
                     {t.platform.titleEmphasis}
                   </span>{" "}
                   {t.platform.titleRest}
