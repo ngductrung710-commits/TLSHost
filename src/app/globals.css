@@ -124,19 +124,28 @@
 }
 
 @layer components {
-  /* Scroll reveal — driven by IntersectionObserver, not a library */
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition:
-      opacity 0.6s var(--ease-out-soft),
-      transform 0.6s var(--ease-out-soft);
-    transition-delay: var(--reveal-delay, 0ms);
-  }
+  /* Scroll reveal — driven by IntersectionObserver, not a library.
 
-  .reveal[data-shown="true"] {
-    opacity: 1;
-    transform: none;
+     The hidden state is deliberately scoped to `scripting: enabled`. Without
+     that guard, anything that fails to run the observer — JavaScript blocked,
+     a bundle that never loads, a crawler that does not execute scripts — would
+     be served a page at opacity 0, i.e. blank. Browsers that do not support
+     the `scripting` feature simply never hide the content: they lose the
+     animation and keep the page, which is the right way round to fail. */
+  @media (scripting: enabled) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 0.6s var(--ease-out-soft),
+        transform 0.6s var(--ease-out-soft);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .reveal[data-shown="true"] {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   /* ux: skip-links */
@@ -155,6 +164,22 @@
   /* Hairline that reads on both canvas and surface */
   .hairline {
     border-color: var(--color-line);
+  }
+
+  /* Marker-pen underline behind a phrase.
+     Painted as a background gradient rather than an absolutely positioned bar,
+     so the phrase is free to wrap: an absolute bar needs `whitespace-nowrap` to
+     line up, and that nowrap pushed the page into horizontal scroll at 320px.
+     `box-decoration-break: clone` repaints the band on every wrapped line. */
+  .highlight {
+    background-image: linear-gradient(
+      to top,
+      rgb(230 195 176 / 0.7) 0,
+      rgb(230 195 176 / 0.7) 0.3em,
+      transparent 0.3em
+    );
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 }
 
@@ -207,4 +232,16 @@
 @keyframes mockRise {
   0%   { opacity: 0; transform: translateY(6px); }
   100% { opacity: 1; transform: none; }
+}
+
+/* Printing must never inherit a mid-animation state. */
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
 }

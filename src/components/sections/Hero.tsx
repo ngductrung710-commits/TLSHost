@@ -21,14 +21,7 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
 
           <Reveal delay={60}>
             <h1 className="mt-5 text-[2.5rem] leading-[1.08] text-ink-900 sm:text-[3.5rem] lg:text-[4rem]">
-              {t.hero.titleLead}{" "}
-              <span className="relative whitespace-nowrap">
-                <span className="relative z-10">{t.hero.titleEmphasis}</span>
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-0 bottom-1.5 z-0 h-[0.3em] bg-clay-200/70"
-                />
-              </span>
+              {t.hero.titleLead} <span className="highlight">{t.hero.titleEmphasis}</span>
             </h1>
           </Reveal>
 

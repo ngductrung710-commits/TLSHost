@@ -35,7 +35,7 @@ export function PillarSection({
     <section className={tone === "surface" ? "bg-surface" : "bg-canvas"}>
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <Reveal className={flip ? "lg:order-2" : undefined}>
+          <Reveal className={`min-w-0 ${flip ? "lg:order-2" : ""}`}>
             <Eyebrow>{pillar.eyebrow}</Eyebrow>
             <h2 className="mt-3 text-[1.75rem] leading-[1.18] text-ink-900 sm:text-[2.125rem]">
               {pillar.title}
@@ -49,7 +49,7 @@ export function PillarSection({
             </div>
           </Reveal>
 
-          <Reveal delay={90} className={flip ? "lg:order-1" : undefined}>
+          <Reveal delay={90} className={`min-w-0 ${flip ? "lg:order-1" : ""}`}>
             {mockup}
           </Reveal>
         </div>
