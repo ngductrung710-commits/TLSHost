@@ -400,3 +400,36 @@
     transition: none;
   }
 }
+
+/* --- Tier stack -----------------------------------------------------------
+   The three scale tiers pin one after another as the page scrolls, each at a
+   slightly lower offset than the last, so they gather into a deck with a strip
+   of every earlier card still visible above the top one.
+
+   Gated three ways, all of them about not trapping content:
+     - min-width 1024px, because below it the mockup column is dropped and the
+       cards grow tall enough to outrun the viewport;
+     - min-height 660px, for short windows: the deepest card pins at 120px and
+       is about 507px tall at this width, so 627px is the hard floor below
+       which a pinned card's own bottom is unreachable. 660 leaves ~33px of
+       margin — recheck it if these cards ever grow taller;
+     - prefers-reduced-motion, since scroll-linked pinning is exactly the kind
+       of movement that setting asks the page to stop making.
+   Outside those, the same markup is a plain stack of cards.
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) and (min-height: 660px) and (prefers-reduced-motion: no-preference) {
+  .stack {
+    --stack-top: 5.5rem; /* clears the 4.5rem sticky header with room to spare */
+    --stack-step: 1rem;
+  }
+
+  .stack > * {
+    position: sticky;
+    top: calc(var(--stack-top) + var(--stack-index, 0) * var(--stack-step));
+  }
+
+  .stack > :nth-child(2) { --stack-index: 1; }
+  .stack > :nth-child(3) { --stack-index: 2; }
+  .stack > :nth-child(4) { --stack-index: 3; }
+}
