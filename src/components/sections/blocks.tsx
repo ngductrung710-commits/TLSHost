@@ -6,6 +6,7 @@ import {
   SectionHeading,
 } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
+import { SIGN_UP_URL } from "@/lib/links";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
 
@@ -211,7 +212,7 @@ export function CtaBand({
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <ButtonLink href="/app/login" tone="inverse" className="w-full sm:w-auto">
+            <ButtonLink href={SIGN_UP_URL} tone="inverse" className="w-full sm:w-auto">
               {primary}
             </ButtonLink>
             {secondary ? (

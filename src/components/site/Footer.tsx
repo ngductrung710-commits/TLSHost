@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Wordmark } from "@/components/site/Wordmark";
+import { LOG_IN_URL } from "@/lib/links";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
 
@@ -13,7 +14,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
       links: [
         { label: t.nav.features, href: `/${locale}/features` },
         { label: t.nav.pricing, href: `/${locale}/pricing` },
-        { label: t.nav.login, href: "/app/login" },
+        { label: t.nav.login, href: LOG_IN_URL },
       ],
     },
     {

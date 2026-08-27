@@ -11,6 +11,7 @@ import {
   SectionHeading,
 } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
+import { SIGN_UP_URL } from "@/lib/links";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
@@ -106,7 +107,7 @@ export default async function PricingPage(props: PageProps<"/[lang]/pricing">) {
                       </p>
 
                       <ButtonLink
-                        href="/app/login"
+                        href={SIGN_UP_URL}
                         tone={featured ? "primary" : "secondary"}
                         className="mt-6 w-full"
                       >

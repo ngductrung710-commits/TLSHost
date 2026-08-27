@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Wordmark } from "@/components/site/Wordmark";
+import { LOG_IN_URL, SIGN_UP_URL } from "@/lib/links";
 import { locales, switchLocalePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
 
@@ -102,14 +103,14 @@ export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
           <LocaleSwitch locale={locale} pathname={pathname} label={t.nav.langLabel} />
 
           <Link
-            href="/app/login"
+            href={LOG_IN_URL}
             className="hidden min-h-11 items-center rounded-full px-4 text-[15px] font-medium text-ink-600 transition-colors hover:bg-ink-100 hover:text-ink-900 sm:flex"
           >
             {t.nav.login}
           </Link>
 
           <Link
-            href="/app/login"
+            href={SIGN_UP_URL}
             className="hidden min-h-11 items-center rounded-full bg-ink-900 px-5 text-[15px] font-semibold text-sand-100 shadow-sm transition-all duration-200 hover:bg-ink-800 hover:shadow-md active:scale-[0.98] sm:inline-flex"
           >
             {t.nav.start}
@@ -173,7 +174,7 @@ export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
             ))}
             <li>
               <Link
-                href="/app/login"
+                href={LOG_IN_URL}
                 className="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-ink-700 hover:bg-ink-50"
               >
                 {t.nav.login}
@@ -182,7 +183,7 @@ export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
           </ul>
 
           <Link
-            href="/app/login"
+            href={SIGN_UP_URL}
             className="mt-3 flex min-h-12 items-center justify-center rounded-full bg-ink-900 px-5 text-base font-semibold text-sand-100"
           >
             {t.nav.start}
