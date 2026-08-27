@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
-import { ArrowLink, Container, Eyebrow, FeatureList } from "@/components/ui/primitives";
+import { PillarLabel, type PillarIcon } from "@/components/ui/PillarLabel";
+import { ArrowLink, Container, FeatureList } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 
 type Pillar = {
@@ -19,6 +20,7 @@ type Pillar = {
 export function PillarSection({
   pillar,
   mockup,
+  icon,
   href,
   flip = false,
   tone = "canvas",
@@ -26,6 +28,8 @@ export function PillarSection({
 }: {
   pillar: Pillar;
   mockup: ReactNode;
+  /** Picks the glyph on the label chip. */
+  icon: PillarIcon;
   /** Omit to end the section on its prose — used where the section is itself the destination. */
   href?: string;
   flip?: boolean;
@@ -37,7 +41,7 @@ export function PillarSection({
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal className={`min-w-0 ${flip ? "lg:order-2" : ""}`}>
-            <Eyebrow>{pillar.eyebrow}</Eyebrow>
+            <PillarLabel icon={icon}>{pillar.eyebrow}</PillarLabel>
             <h2 className="mt-3 text-[1.75rem] leading-[1.18] text-ink-900 sm:text-[2.125rem]">
               {pillar.title}
             </h2>

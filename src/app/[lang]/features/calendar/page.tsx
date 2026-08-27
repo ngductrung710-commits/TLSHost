@@ -91,10 +91,16 @@ export default async function CalendarFeaturePage(
 
       {/* The board itself, then editing it. No trailing links: this page is
           where "learn about the calendar" was already pointing. */}
-      <PillarSection pillar={p.overview} mockup={<CalendarMock t={t} />} tone="surface" />
+      <PillarSection
+        pillar={p.overview}
+        icon="board"
+        mockup={<CalendarMock t={t} />}
+        tone="surface"
+      />
 
       <PillarSection
         pillar={p.control}
+        icon="edit"
         mockup={<CalendarMonthMock t={t} />}
         tone="canvas"
         flip

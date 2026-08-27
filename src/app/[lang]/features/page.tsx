@@ -107,12 +107,14 @@ export default async function FeaturesPage(props: PageProps<"/[lang]/features">)
       {/* Every pillar in detail */}
       <PillarSection
         pillar={t.pillars.calendar}
+        icon="calendar"
         mockup={<CalendarMock t={t} />}
         href={`/${locale}/features/calendar`}
         tone="canvas"
       />
       <PillarSection
         pillar={t.pillars.ai}
+        icon="ai"
         mockup={<AiAssistantMock t={t} />}
         href={pricing}
         tone="surface"
@@ -120,12 +122,14 @@ export default async function FeaturesPage(props: PageProps<"/[lang]/features">)
       />
       <PillarSection
         pillar={t.pillars.channels}
+        icon="channels"
         mockup={<ChannelSyncMock t={t} />}
         href={pricing}
         tone="canvas"
       />
       <PillarSection
         pillar={t.pillars.direct}
+        icon="direct"
         mockup={<DirectBookingMock t={t} />}
         href={pricing}
         tone="surface"
@@ -133,12 +137,14 @@ export default async function FeaturesPage(props: PageProps<"/[lang]/features">)
       />
       <PillarSection
         pillar={t.pillars.housekeeping}
+        icon="housekeeping"
         mockup={<HousekeepingMock t={t} />}
         href={pricing}
         tone="canvas"
       />
       <PillarSection
         pillar={t.pillars.team}
+        icon="team"
         mockup={<TeamPermissionsMock t={t} />}
         href={pricing}
         tone="surface"

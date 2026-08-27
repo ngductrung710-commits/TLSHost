@@ -45,6 +45,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
           It sends readers to its own deep-dive rather than the features index. */}
       <PillarSection
         pillar={t.pillars.calendar}
+        icon="calendar"
         mockup={<CalendarMock t={t} />}
         href={`${features}/calendar`}
         tone="canvas"
@@ -52,6 +53,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
 
       <PillarSection
         pillar={t.pillars.ai}
+        icon="ai"
         mockup={<AiAssistantMock t={t} />}
         href={features}
         tone="surface"
@@ -60,6 +62,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
 
       <PillarSection
         pillar={t.pillars.channels}
+        icon="channels"
         mockup={<ChannelSyncMock t={t} />}
         href={features}
         tone="canvas"
@@ -67,6 +70,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
 
       <PillarSection
         pillar={t.pillars.direct}
+        icon="direct"
         mockup={<DirectBookingMock t={t} />}
         href={features}
         tone="surface"
@@ -75,6 +79,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
 
       <PillarSection
         pillar={t.pillars.housekeeping}
+        icon="housekeeping"
         mockup={<HousekeepingMock t={t} />}
         href={features}
         tone="canvas"
@@ -84,6 +89,7 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
           above raise once a host stops working alone. */}
       <PillarSection
         pillar={t.pillars.team}
+        icon="team"
         mockup={<TeamPermissionsMock t={t} />}
         href={features}
         tone="surface"
