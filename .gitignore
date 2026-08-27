@@ -42,3 +42,7 @@ next-env.d.ts
 
 # ...but the template is meant to be committed
 !.env.example
+
+# Waitlist signups — real people's email addresses. Never commit these.
+/data/
+*.jsonl

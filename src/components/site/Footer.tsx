@@ -14,7 +14,8 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
       links: [
         { label: t.nav.features, href: `/${locale}/features` },
         { label: t.nav.pricing, href: `/${locale}/pricing` },
-        { label: t.nav.login, href: LOG_IN_URL },
+        // Dropped while there is no application to log into.
+        ...(LOG_IN_URL ? [{ label: t.nav.login, href: LOG_IN_URL }] : []),
       ],
     },
     {

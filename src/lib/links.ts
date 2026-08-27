@@ -1,14 +1,21 @@
+import type { Locale } from "@/i18n/config";
+
 /**
- * Outbound destinations for the call-to-action buttons.
+ * Destinations for the call-to-action buttons.
  *
- * This site is the marketing surface only — the product application lives
- * elsewhere. Every "start free" and "log in" button reads from here, so
- * pointing them at the real application (or a waitlist, or a contact form)
- * is a one-line change rather than a hunt through eight components.
+ * This site is the marketing surface; the product application is a separate
+ * build that does not exist yet. Until it does, "start free" collects a
+ * waitlist signup instead of pretending there is somewhere to sign in.
  */
 
-/** Where "Start free" / "Dùng thử miễn phí" sends people. */
-export const SIGN_UP_URL = process.env.NEXT_PUBLIC_SIGN_UP_URL ?? "/app/login";
+/** Where "Start free" sends people. Defaults to the on-site waitlist. */
+export function signUpUrl(locale: Locale): string {
+  return process.env.NEXT_PUBLIC_SIGN_UP_URL || `/${locale}/signup`;
+}
 
-/** Where "Log in" / "Đăng nhập" sends people. */
-export const LOG_IN_URL = process.env.NEXT_PUBLIC_LOG_IN_URL ?? "/app/login";
+/**
+ * Where "Log in" sends people, or `null` while there is nothing to log into.
+ * The header and footer drop the link entirely when this is null — a login
+ * link that lands on a waitlist is worse than no login link.
+ */
+export const LOG_IN_URL: string | null = process.env.NEXT_PUBLIC_LOG_IN_URL || null;

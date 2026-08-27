@@ -134,6 +134,40 @@ does not answer on port 3000 within 20 seconds.
 - `/_next/static/` is content-hashed and served with a one-year immutable
   cache header.
 
+## The waitlist
+
+There is no product application yet, so "Dùng thử miễn phí" / "Start free"
+leads to an on-site waitlist at `/[lang]/signup` rather than a sign-in page
+that would 404. The "Log in" links are not rendered at all while there is
+nothing to log into.
+
+Submissions go through a Server Action to an append-only JSONL file, one
+object per line:
+
+```json
+{"at":"2026-08-27T06:10:29.678Z","name":"…","email":"…","size":"2–5 chỗ nghỉ","locale":"vi"}
+```
+
+Set `WAITLIST_FILE` to a path **outside the git checkout** (the deploy script
+runs `git reset --hard`). The default, `data/waitlist.jsonl`, is gitignored —
+it holds real email addresses and must never reach the repository.
+
+Read the signups with:
+
+```bash
+cat /var/lib/tlshost/waitlist.jsonl | jq -r '[.at,.name,.email,.size] | @csv'
+```
+
+Protections on the endpoint, which is reachable by direct POST and not only
+through the form: a honeypot field, per-IP rate limiting (3 per 10 minutes,
+in-memory), and length caps on every field. The limiter resets when PM2
+restarts the process — it blunts a bot, it is not a quota. Put anything
+stricter in Nginx.
+
+When the application is ready, set `NEXT_PUBLIC_SIGN_UP_URL` and
+`NEXT_PUBLIC_LOG_IN_URL`; every CTA reads from `src/lib/links.ts`, so nothing
+else needs editing.
+
 ## Accessibility
 
 Checked against the WCAG-derived rules the design system was built on:

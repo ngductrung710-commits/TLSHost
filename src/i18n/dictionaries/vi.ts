@@ -402,6 +402,41 @@ const vi = {
     },
   },
 
+  waitlist: {
+    eyebrow: "Đăng ký sớm",
+    title: "Giữ chỗ cho ngày TLSHost mở cửa",
+    body: "Chúng tôi đang hoàn thiện những phần cuối cùng. Để lại email và bạn sẽ nằm trong nhóm đầu tiên được mời vào, kèm gói Khởi đầu miễn phí vĩnh viễn.",
+    nameLabel: "Tên của bạn",
+    namePlaceholder: "Nguyễn Văn A",
+    emailLabel: "Email",
+    emailPlaceholder: "ban@vidu.com",
+    sizeLabel: "Bạn đang quản lý bao nhiêu chỗ nghỉ?",
+    sizeHint: "Không bắt buộc. Giúp chúng tôi biết nên mời ai trước.",
+    sizeOptions: [
+      "Chưa có, đang tìm hiểu",
+      "1 chỗ nghỉ",
+      "2–5 chỗ nghỉ",
+      "6–20 chỗ nghỉ",
+      "Trên 20 chỗ nghỉ",
+    ],
+    submit: "Đăng ký nhận thông báo",
+    submitting: "Đang gửi…",
+    consent:
+      "Chúng tôi chỉ dùng email này để báo bạn khi TLSHost mở cửa. Không quảng cáo, không chia sẻ cho bên thứ ba, và bạn có thể yêu cầu xoá bất cứ lúc nào.",
+    successTitle: "Đã ghi nhận",
+    successBody:
+      "Cảm ơn bạn. Chúng tôi sẽ gửi lời mời tới địa chỉ bạn vừa để lại ngay khi có chỗ.",
+    backHome: "Về trang chủ",
+    errorSummary: "Chưa gửi được. Vui lòng xem lại:",
+    errors: {
+      nameRequired: "Vui lòng cho biết tên của bạn.",
+      emailRequired: "Vui lòng nhập email.",
+      emailInvalid: "Email này trông chưa đúng, bạn kiểm tra lại giúp nhé.",
+      rateLimited: "Bạn vừa gửi xong. Chờ một chút rồi thử lại.",
+      server: "Có lỗi ở phía chúng tôi. Bạn thử lại sau ít phút giúp nhé.",
+    },
+  },
+
   /** Labels rendered inside the product mockups. */
   mock: {
     calendar: {

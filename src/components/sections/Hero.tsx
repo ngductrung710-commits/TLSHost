@@ -1,6 +1,6 @@
 import { CalendarMock } from "@/components/mockups/CalendarMock";
 import { ButtonLink, Container, Eyebrow } from "@/components/ui/primitives";
-import { SIGN_UP_URL } from "@/lib/links";
+import { signUpUrl } from "@/lib/links";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
@@ -34,7 +34,7 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
 
           <Reveal delay={180}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={SIGN_UP_URL} className="w-full sm:w-auto">
+              <ButtonLink href={signUpUrl(locale)} className="w-full sm:w-auto">
                 {t.hero.ctaPrimary}
               </ButtonLink>
               <ButtonLink

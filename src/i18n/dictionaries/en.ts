@@ -401,6 +401,41 @@ const en: Dictionary = {
     },
   },
 
+  waitlist: {
+    eyebrow: "Early access",
+    title: "Hold your place for the day TLSHost opens",
+    body: "We are finishing the last pieces. Leave your email and you will be in the first group invited in, with the Starter plan free forever.",
+    nameLabel: "Your name",
+    namePlaceholder: "Alex Nguyen",
+    emailLabel: "Email",
+    emailPlaceholder: "you@example.com",
+    sizeLabel: "How many properties do you manage?",
+    sizeHint: "Optional. It helps us decide who to invite first.",
+    sizeOptions: [
+      "None yet, just looking",
+      "1 property",
+      "2–5 properties",
+      "6–20 properties",
+      "More than 20 properties",
+    ],
+    submit: "Join the waitlist",
+    submitting: "Sending…",
+    consent:
+      "We will only use this address to tell you when TLSHost opens. No marketing, nothing shared with third parties, and you can ask us to delete it at any time.",
+    successTitle: "You are on the list",
+    successBody:
+      "Thank you. We will send an invitation to the address you left as soon as a place opens up.",
+    backHome: "Back to home",
+    errorSummary: "We could not send that. Please check:",
+    errors: {
+      nameRequired: "Please tell us your name.",
+      emailRequired: "Please enter your email.",
+      emailInvalid: "That email does not look right — could you check it?",
+      rateLimited: "You have just sent one. Give it a moment and try again.",
+      server: "Something broke on our side. Please try again in a few minutes.",
+    },
+  },
+
   mock: {
     calendar: {
       title: "Calendar",
