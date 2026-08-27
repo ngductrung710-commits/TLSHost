@@ -44,12 +44,19 @@ export function ChannelStrip({ t }: { t: Dictionary }) {
 /* Stats band                                                                  */
 /* -------------------------------------------------------------------------- */
 
-export function StatsBand({ t }: { t: Dictionary }) {
+export function StatsBand({
+  t,
+  items = t.stats.items,
+}: {
+  t: Dictionary;
+  /** Defaults to the sitewide figures. */
+  items?: readonly { value: string; caption: string; label: string }[];
+}) {
   return (
     <Section tone="ink">
       <Container>
         <dl className="grid gap-10 sm:grid-cols-3 sm:gap-8">
-          {t.stats.items.map((stat, i) => (
+          {items.map((stat, i) => (
             <Reveal key={stat.value} delay={i * 90} className="text-center sm:text-left">
               <dt>
                 <Eyebrow tone="inverse">{stat.caption}</Eyebrow>

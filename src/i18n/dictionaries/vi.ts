@@ -355,6 +355,101 @@ const vi = {
     },
   },
 
+  /* The calendar's own page. "Learn about the operations calendar" on the
+     features page used to land on pricing; this is what it promises. */
+  calendarPage: {
+    meta: {
+      title: "Lịch & vận hành",
+      description:
+        "Một bảng lịch nhiều ngày cho cả danh mục: đặt phòng, đêm khóa, tình trạng buồng phòng và công suất — sửa được ngay trên bảng.",
+    },
+    back: "Tất cả tính năng",
+
+    hero: {
+      eyebrow: "Lịch & vận hành",
+      title: "Một bảng, thấy hết.",
+      body: "Đặt phòng, đêm khóa, phòng còn trống và tình trạng dọn dẹp của mọi chỗ nghỉ trên cùng một bảng nhiều ngày. Đây là bản gốc — mọi con số khác trong TLSHost đều đọc ra từ đây.",
+    },
+
+    overview: {
+      eyebrow: "Một góc nhìn",
+      title: "Mọi chỗ nghỉ nằm cạnh nhau",
+      body: "Tuần trước, hôm nay và ba tháng tới của tất cả chỗ nghỉ trong một khung hình. Không đăng nhập lần lượt sáu kênh, không bảng tính đối chiếu.",
+      bullets: [
+        "Nhiều chỗ nghỉ, nhiều loại phòng trên cùng một bảng",
+        "Đặt phòng và đêm khóa hiện cạnh nhau, cùng một thang ngày",
+        "Nhảy tới bất kỳ ngày hay chỗ nghỉ nào trong một thao tác",
+        "Công suất tính lại ngay lúc bảng đổi",
+      ],
+    },
+
+    control: {
+      eyebrow: "Trong tầm tay",
+      title: "Sửa ngay trên bảng",
+      body: "Kéo chọn vài ngày là xong một đặt phòng. Dời kỳ lưu trú, khóa một đêm để bảo trì, đổi phòng cho khách — làm tại chỗ, không mở thêm màn hình nào.",
+      bullets: [
+        "Kéo chọn ngày để tạo đặt phòng mới",
+        "Dời hoặc kéo dài kỳ lưu trú ngay trên thanh của nó",
+        "Khóa đêm cho bảo trì hoặc cho chủ nhà ở",
+        "Doanh thu và lượt nhận phòng đổi theo cùng lúc",
+      ],
+    },
+
+    journey: {
+      eyebrow: "Suốt kỳ lưu trú",
+      title: "Từ lúc đặt tới lúc phòng sạch trở lại",
+      body: "Bảng lịch đi hết vòng đời một lượt khách, nên không chặng nào phải nằm trong trí nhớ của bạn.",
+      steps: [
+        {
+          title: "Đặt",
+          body: "Đặt phòng mới — trực tiếp hay đồng bộ về từ OTA — hiện lên bảng và trừ phòng trống ngay khi tới.",
+        },
+        {
+          title: "Ở",
+          body: "Ai đang ở, ai đến chiều nay, ai trả phòng sáng mai — đọc trên một hàng, không cần lọc.",
+        },
+        {
+          title: "Dọn",
+          body: "Trạng thái dọn nằm ngay trên ô của phòng, nên vị khách kế tiếp không bao giờ là một bất ngờ.",
+        },
+      ],
+      always: {
+        label: "Xuyên suốt",
+        title: "Trợ lý AI",
+        body: "Nhờ trợ lý soạn một thay đổi: dời phòng, chèn thêm đặt phòng, khóa một đêm. Nó đề xuất, bạn duyệt ngay trên bảng. Không có gì tự chạy.",
+      },
+    },
+
+    stats: [
+      { value: "1", caption: "Bảng", label: "Cho toàn bộ chỗ nghỉ và loại phòng bạn đang vận hành" },
+      { value: "24/7", caption: "Trợ lý", label: "Luôn sẵn sàng soạn thay đổi chờ bạn duyệt" },
+      { value: "0%", caption: "Hoa hồng", label: "Trên mọi lượt đặt trực tiếp, vĩnh viễn" },
+    ],
+
+    faq: {
+      title: "Hỏi về lịch",
+      items: [
+        {
+          q: "Lịch có gom đủ mọi kênh không?",
+          a: "Có. Đặt phòng trực tiếp và đặt phòng đồng bộ về từ các OTA nằm chung một bảng, nên một đêm không thể bị bán hai lần.",
+        },
+        {
+          q: "Tôi có nhiều chỗ nghỉ thì sao?",
+          a: "Bảng được dựng cho nhiều chỗ nghỉ, nhiều loại phòng ngay từ đầu. Bạn quét hết danh mục mà không rời trang.",
+        },
+        {
+          q: "Buồng phòng và số liệu nằm ở đâu?",
+          a: "Trạng thái dọn nằm trên từng ô phòng. Doanh thu, công suất và lượt nhận phòng sắp tới tự dồn về trang tổng quan.",
+        },
+      ],
+    },
+
+    cta: {
+      title: "Đưa cả danh mục lên một bảng.",
+      body: "Dựng chỗ nghỉ đầu tiên và nhận lượt đặt trực tiếp ngay hôm nay.",
+    },
+  },
+
   pricingPage: {
     eyebrow: "Bảng giá",
     title: "Mức giá tự trả lại tiền cho nó",
@@ -502,6 +597,24 @@ const vi = {
       zeroFee: "0% hoa hồng",
       days: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
       properties: ["Ocean View Studio", "Garden Suite", "Sky Loft", "Bamboo Room"],
+    },
+    /* The month grid on the calendar page: one property, a stay being drawn
+       across dates, and the draft it produces. */
+    calendarMonth: {
+      title: "Lịch",
+      subtitle: "Ocean View Studio · Tháng 7",
+      days: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
+      hint: "Kéo chọn ngày để tạo đặt phòng",
+      draft: "Đặt phòng mới",
+      guest: "Khách",
+      guestName: "Sofia Kapoor",
+      initials: "SK",
+      partySize: "2 khách",
+      nights: "3 đêm",
+      dates: "15–18/7",
+      total: "Tổng cộng",
+      confirm: "Tạo đặt phòng",
+      others: ["Linh Tran", "Hoang Vu"],
     },
     ai: {
       title: "Trợ lý AI",

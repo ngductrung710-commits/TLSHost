@@ -349,6 +349,99 @@ const en: Dictionary = {
     },
   },
 
+  calendarPage: {
+    meta: {
+      title: "Calendar & operations",
+      description:
+        "One multi-day board for the whole portfolio: bookings, blocked nights, housekeeping status and occupancy — edited in place.",
+    },
+    back: "All features",
+
+    hero: {
+      eyebrow: "Calendar & operations",
+      title: "One board. The whole picture.",
+      body: "Bookings, blocked nights, rooms still free and cleaning status across every property, on a single multi-day board. This is the original — every other number in TLSHost is read off it.",
+    },
+
+    overview: {
+      eyebrow: "One view",
+      title: "Every property, side by side",
+      body: "Last week, today and the next three months across all your properties in one frame. No signing into six channels in turn, no reconciliation spreadsheet.",
+      bullets: [
+        "Several properties and room types on one board",
+        "Bookings and blocked nights side by side on one day scale",
+        "Jump to any date or property in a single move",
+        "Occupancy recalculates the moment the board changes",
+      ],
+    },
+
+    control: {
+      eyebrow: "Within reach",
+      title: "Edit in place",
+      body: "Drag across a few days and the booking exists. Move a stay, block a night for maintenance, switch a guest's room — on the board, without opening another screen.",
+      bullets: [
+        "Drag across dates to create a booking",
+        "Move or extend a stay on its own bar",
+        "Block nights for maintenance or owner stays",
+        "Revenue and arrivals change at the same moment",
+      ],
+    },
+
+    journey: {
+      eyebrow: "Across the stay",
+      title: "From booked to clean again",
+      body: "The board follows a guest's whole stay, so none of it has to live in your head.",
+      steps: [
+        {
+          title: "Booked",
+          body: "New bookings — direct or synced back from an OTA — land on the board and take the room out of inventory as they arrive.",
+        },
+        {
+          title: "Staying",
+          body: "Who is in, who arrives this afternoon, who leaves tomorrow — read off one row, no filtering.",
+        },
+        {
+          title: "Cleaned",
+          body: "Cleaning status sits on the room's own cell, so the next guest is never a surprise.",
+        },
+      ],
+      always: {
+        label: "Throughout",
+        title: "The AI assistant",
+        body: "Ask the assistant to draft a change: move a room, slot a booking in, block a night. It proposes, you approve on the board. Nothing runs on its own.",
+      },
+    },
+
+    stats: [
+      { value: "1", caption: "Board", label: "For every property and room type you run" },
+      { value: "24/7", caption: "Assistant", label: "Always ready to draft a change for you to approve" },
+      { value: "0%", caption: "Commission", label: "On every direct booking, permanently" },
+    ],
+
+    faq: {
+      title: "Questions about the calendar",
+      items: [
+        {
+          q: "Does the calendar cover every channel?",
+          a: "Yes. Direct bookings and bookings synced back from the OTAs sit on the same board, so a night cannot be sold twice.",
+        },
+        {
+          q: "What if I run several properties?",
+          a: "The board was built for several properties and room types from the start. You scan the whole portfolio without leaving the page.",
+        },
+        {
+          q: "Where do housekeeping and the numbers live?",
+          a: "Cleaning status sits on each room's cell. Revenue, occupancy and upcoming arrivals roll up to the dashboard on their own.",
+        },
+      ],
+    },
+
+    cta: {
+      title: "Put the whole portfolio on one board.",
+      body: "Set up your first property and take a direct booking today.",
+    },
+  },
+
   pricingPage: {
     eyebrow: "Pricing",
     title: "Pricing that pays for itself",
@@ -495,6 +588,22 @@ const en: Dictionary = {
       zeroFee: "0% commission",
       days: ["M", "T", "W", "T", "F", "S", "S"],
       properties: ["Ocean View Studio", "Garden Suite", "Sky Loft", "Bamboo Room"],
+    },
+    calendarMonth: {
+      title: "Calendar",
+      subtitle: "Ocean View Studio · July",
+      days: ["M", "T", "W", "T", "F", "S", "S"],
+      hint: "Drag across dates to create a booking",
+      draft: "New booking",
+      guest: "Guest",
+      guestName: "Sofia Kapoor",
+      initials: "SK",
+      partySize: "2 guests",
+      nights: "3 nights",
+      dates: "15–18 Jul",
+      total: "Total",
+      confirm: "Create booking",
+      others: ["Linh Tran", "Hoang Vu"],
     },
     ai: {
       title: "AI assistant",

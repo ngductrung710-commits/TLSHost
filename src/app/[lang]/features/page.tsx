@@ -108,7 +108,7 @@ export default async function FeaturesPage(props: PageProps<"/[lang]/features">)
       <PillarSection
         pillar={t.pillars.calendar}
         mockup={<CalendarMock t={t} />}
-        href={pricing}
+        href={`/${locale}/features/calendar`}
         tone="canvas"
       />
       <PillarSection

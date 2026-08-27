@@ -8,7 +8,7 @@ type Pillar = {
   title: string;
   body: string;
   bullets: readonly string[];
-  link: string;
+  link?: string;
 };
 
 /**
@@ -26,7 +26,8 @@ export function PillarSection({
 }: {
   pillar: Pillar;
   mockup: ReactNode;
-  href: string;
+  /** Omit to end the section on its prose — used where the section is itself the destination. */
+  href?: string;
   flip?: boolean;
   tone?: "canvas" | "surface";
   showBullets?: boolean;
@@ -44,9 +45,11 @@ export function PillarSection({
 
             {showBullets ? <FeatureList items={pillar.bullets} /> : null}
 
-            <div className="mt-7">
-              <ArrowLink href={href}>{pillar.link}</ArrowLink>
-            </div>
+            {href && pillar.link ? (
+              <div className="mt-7">
+                <ArrowLink href={href}>{pillar.link}</ArrowLink>
+              </div>
+            ) : null}
           </Reveal>
 
           <Reveal delay={90} className={`min-w-0 ${flip ? "lg:order-1" : ""}`}>
