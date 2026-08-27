@@ -138,8 +138,8 @@ const en: Dictionary = {
   pillars: {
     calendar: {
       eyebrow: "Calendar & operations",
-      title: "The calendar that runs your property",
-      body: "One fast multi-day board showing every booking, block, room type and cleaning status across all your properties. Create and edit right on the grid — no second screen required.",
+      title: "The whole property, on one board",
+      body: "Bookings, blocks, cleaning and inventory across every property — on one fast multi-day board that stays the single source of truth.",
       bullets: [
         "See multiple properties and room types at once",
         "Create, drag and edit bookings directly on the board",

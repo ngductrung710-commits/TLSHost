@@ -157,8 +157,8 @@ const vi = {
   pillars: {
     calendar: {
       eyebrow: "Lịch & vận hành",
-      title: "Chiếc lịch tự vận hành cơ ngơi của bạn",
-      body: "Một bảng nhiều ngày, cuộn mượt, hiển thị mọi đặt phòng, lịch khóa, loại phòng và tình trạng dọn dẹp trên tất cả chỗ nghỉ. Tạo và sửa ngay trên bảng, không cần mở thêm màn hình nào.",
+      title: "Cả cơ ngơi, trên một bảng",
+      body: "Đặt phòng, khóa phòng, dọn phòng và kho phòng trên mọi chỗ nghỉ — trên một bảng lịch nhiều ngày, nhanh, luôn là nguồn thông tin chuẩn duy nhất.",
       bullets: [
         "Xem đồng thời nhiều chỗ nghỉ và nhiều loại phòng",
         "Tạo, kéo và sửa đặt phòng trực tiếp trên bảng",
