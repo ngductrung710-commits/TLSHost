@@ -169,8 +169,8 @@ const vi = {
     },
     ai: {
       eyebrow: "Trợ lý AI",
-      title: "Bạn mô tả. Trợ lý soạn. Bạn duyệt.",
-      body: "Một trợ lý hội thoại nằm ngay trong không gian làm việc. Nhờ nó khóa phòng, đổi giá, tạo đặt phòng hay ghi nhận thanh toán — nó dựng sẵn thay đổi, cho bạn xem trước chính xác từng dòng, rồi đứng chờ.",
+      title: "AI soạn sẵn. Bạn duyệt.",
+      body: "Hỏi bằng ngôn ngữ thường ngày. Trợ lý soạn sẵn đặt phòng, chỗ nghỉ, phòng và thanh toán — rồi cho bạn xem chính xác điều gì sẽ thay đổi và chờ bạn gật đầu.",
       bullets: [
         "Ra lệnh bằng tiếng Việt đời thường, không cần cú pháp",
         "Mọi đề xuất kèm bản xem trước đầy đủ trước khi áp dụng",

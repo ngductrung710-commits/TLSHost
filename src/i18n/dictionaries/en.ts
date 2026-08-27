@@ -150,8 +150,8 @@ const en: Dictionary = {
     },
     ai: {
       eyebrow: "AI assistant",
-      title: "You describe it. It drafts. You approve.",
-      body: "A conversational assistant that lives inside the workspace. Ask it to block a room, change a rate, create a booking or record a payment — it stages the change, shows you exactly what will move, then waits.",
+      title: "AI drafts. You approve.",
+      body: "Ask in plain language. The assistant drafts bookings, properties, rooms and payments — then shows you exactly what would change and waits for your nod.",
       bullets: [
         "Ask in plain language, no syntax to learn",
         "Every proposal comes with a full preview before it applies",
