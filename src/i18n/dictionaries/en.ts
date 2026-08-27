@@ -49,7 +49,7 @@ const en: Dictionary = {
     body: "TLSHost brings your calendar, sales channels, housekeeping and payments into one place. Every OTA reconciles itself hourly. An AI assistant drafts the work — and touches nothing until you approve it.",
     ctaPrimary: "Start free",
     ctaSecondary: "See the platform",
-    note: "Free forever plan · No credit card · Taking bookings on day one",
+    notes: ["Free forever plan", "No credit card", "Ready for guests in minutes"],
 
     pickerTitle: "What should TLSHost take off your plate first?",
     jobs: [

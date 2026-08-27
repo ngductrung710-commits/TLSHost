@@ -167,7 +167,26 @@ export function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
                   {t.hero.ctaSecondary}
                 </ButtonLink>
               </div>
-              <p className="mt-4 text-[13.5px] text-ink-500">{t.hero.note}</p>
+              {/* Three items, not one string joined by separators. As a string
+                  the line broke wherever it ran out of room and stranded the
+                  tail of the last phrase on its own.
+
+                  Below md the three stack and the separators go with them: a
+                  middot left at the end of a stacked line reads as a typo. From
+                  md up the row fits on one line, so the separators earn their
+                  place. */}
+              <ul className="mt-4 flex flex-col items-center gap-1 text-[13.5px] text-ink-500 md:flex-row md:justify-center md:gap-2">
+                {t.hero.notes.map((note, i) => (
+                  <li key={note} className="flex items-center gap-2">
+                    {note}
+                    {i < t.hero.notes.length - 1 ? (
+                      <span aria-hidden="true" className="hidden text-ink-300 md:inline">
+                        ·
+                      </span>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
 

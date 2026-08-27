@@ -53,7 +53,11 @@ const vi = {
     body: "TLSHost gom lịch, kênh bán, buồng phòng và thanh toán về cùng một chỗ. Kênh OTA tự khớp mỗi giờ. Trợ lý AI chuẩn bị sẵn từng thao tác — và không đụng vào dữ liệu của bạn cho tới khi bạn bấm duyệt.",
     ctaPrimary: "Dùng thử miễn phí",
     ctaSecondary: "Xem tính năng",
-    note: "Gói miễn phí trọn đời · Không cần thẻ tín dụng · Nhận đặt phòng ngay trong ngày đầu",
+    notes: [
+      "Gói miễn phí trọn đời",
+      "Không cần thẻ tín dụng",
+      "Sẵn sàng đón khách trong vài phút",
+    ],
 
     /* The hero picker. Choosing a job rewrites the <h1>, the line under the
        grid and the status chip, so the headline is the host's own answer
