@@ -162,8 +162,8 @@ const en: Dictionary = {
     },
     channels: {
       eyebrow: "Channel sync",
-      title: "Every channel accurate, all the time",
-      body: "Two-way iCal import and export with Airbnb, Booking.com, Agoda, Traveloka and any OTA that speaks iCal. Availability flows both directions and refreshes hourly.",
+      title: "Every channel accurate — all the time",
+      body: "Two-way iCal sync with Airbnb, Booking.com, Agoda and Traveloka, refreshed hourly. A night booked anywhere is blocked everywhere.",
       bullets: [
         "Two-way sync, both import and export",
         "Refreshes hourly with no manual step",

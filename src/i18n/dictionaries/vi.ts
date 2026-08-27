@@ -181,8 +181,8 @@ const vi = {
     },
     channels: {
       eyebrow: "Đồng bộ kênh",
-      title: "Kênh nào cũng đúng, mọi lúc",
-      body: "Nhập và xuất iCal hai chiều với Airbnb, Booking.com, Agoda, Traveloka và bất kỳ OTA nào hỗ trợ iCal. Tình trạng phòng chảy theo cả hai chiều, làm mới mỗi giờ.",
+      title: "Mọi kênh luôn chính xác — mọi lúc",
+      body: "Đồng bộ iCal hai chiều với Airbnb, Booking.com, Agoda và Traveloka, làm mới từng giờ. Một đêm được đặt ở bất cứ đâu sẽ bị khóa ở mọi nơi.",
       bullets: [
         "Đồng bộ hai chiều, cả nhập lẫn xuất",
         "Tự làm mới mỗi giờ, không cần bấm tay",
