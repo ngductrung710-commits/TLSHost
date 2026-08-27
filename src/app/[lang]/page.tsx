@@ -3,6 +3,7 @@ import { CalendarMock } from "@/components/mockups/CalendarMock";
 import { ChannelSyncMock } from "@/components/mockups/ChannelSyncMock";
 import { DirectBookingMock } from "@/components/mockups/DirectBookingMock";
 import { HousekeepingMock } from "@/components/mockups/HousekeepingMock";
+import { TeamPermissionsMock } from "@/components/mockups/TeamPermissionsMock";
 import { Hero } from "@/components/sections/Hero";
 import { PillarSection } from "@/components/sections/PillarSection";
 import { ScaleSection } from "@/components/sections/ScaleSection";
@@ -77,6 +78,16 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
         mockup={<HousekeepingMock t={t} />}
         href={features}
         tone="canvas"
+      />
+
+      {/* Sixth and last: permissions is the answer to the question the five
+          above raise once a host stops working alone. */}
+      <PillarSection
+        pillar={t.pillars.team}
+        mockup={<TeamPermissionsMock t={t} />}
+        href={features}
+        tone="surface"
+        flip
       />
 
       <ScaleSection locale={locale} t={t} />
