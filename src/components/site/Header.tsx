@@ -4,10 +4,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { FeaturesMenu } from "@/components/site/FeaturesMenu";
 import { Wordmark } from "@/components/site/Wordmark";
+import { PillarGlyph, type PillarIcon } from "@/components/ui/PillarLabel";
 import { LOG_IN_URL, signUpUrl } from "@/lib/links";
 import { locales, switchLocalePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
+
+/** Route slug → glyph, for the mobile sheet. */
+const MOBILE_GLYPHS: Record<string, PillarIcon> = {
+  calendar: "calendar",
+  "ai-agent": "ai",
+  "channel-manager": "channels",
+  "direct-booking": "direct",
+  housekeeping: "housekeeping",
+  team: "team",
+};
 
 export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
   const pathname = usePathname();
@@ -74,29 +86,26 @@ export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
           <Wordmark className="h-6 w-auto text-ink-900" />
         </Link>
 
-        {/* Desktop navigation */}
+        {/* Desktop navigation. Features is a menu rather than a link, because
+            it now leads to six pages rather than one. */}
         <nav aria-label={t.meta.siteName} className="hidden items-center gap-1 md:flex">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-current={isActive(link.href) ? "page" : undefined}
-              className={`relative flex min-h-11 items-center rounded-full px-4 text-[15px] font-medium transition-colors ${
-                isActive(link.href)
-                  ? "text-ink-900"
-                  : "text-ink-600 hover:bg-ink-100 hover:text-ink-900"
-              }`}
-            >
-              {link.label}
-              {/* ux: nav-state-active — not signalled by colour alone */}
-              {isActive(link.href) ? (
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-4 bottom-2 h-px bg-ink-900"
-                />
-              ) : null}
-            </Link>
-          ))}
+          <FeaturesMenu locale={locale} t={t} />
+
+          <Link
+            href={`/${locale}/pricing`}
+            aria-current={isActive(`/${locale}/pricing`) ? "page" : undefined}
+            className={`relative flex min-h-11 items-center rounded-full px-4 text-[15px] font-medium transition-colors ${
+              isActive(`/${locale}/pricing`)
+                ? "text-ink-900"
+                : "text-ink-600 hover:bg-ink-100 hover:text-ink-900"
+            }`}
+          >
+            {t.nav.pricing}
+            {/* ux: nav-state-active — not signalled by colour alone */}
+            {isActive(`/${locale}/pricing`) ? (
+              <span aria-hidden="true" className="absolute inset-x-4 bottom-2 h-px bg-ink-900" />
+            ) : null}
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -158,7 +167,35 @@ export function Header({ locale, t }: { locale: Locale; t: Dictionary }) {
         className="border-t border-line bg-canvas md:hidden"
       >
         <nav aria-label={t.meta.siteName} className="px-5 py-4">
-          <ul className="space-y-1">
+          {/* No dropdown on a sheet that is already a list: the six pages are
+              shown outright, under the heading they belong to. */}
+          <p className="px-4 pb-2 pt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-500">
+            {t.nav.menuLabel}
+          </p>
+          <ul className="space-y-0.5">
+            {t.nav.menu.map((entry) => {
+              const href = `/${locale}/features/${entry.slug}`;
+              return (
+                <li key={entry.slug}>
+                  <Link
+                    href={href}
+                    aria-current={isActive(href) ? "page" : undefined}
+                    className={`flex min-h-12 items-center gap-3 rounded-xl px-4 text-[15px] font-medium ${
+                      isActive(href) ? "bg-ink-100 text-ink-900" : "text-ink-700 hover:bg-ink-50"
+                    }`}
+                  >
+                    <PillarGlyph
+                      icon={MOBILE_GLYPHS[entry.slug] ?? "board"}
+                      className="h-4.5 w-4.5 text-ink-400"
+                    />
+                    {entry.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          <ul className="mt-3 space-y-1 border-t border-line pt-3">
             {links.map((link) => (
               <li key={link.href}>
                 <Link

@@ -4,7 +4,17 @@ import { locales } from "@/i18n/config";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tlshost.vn";
 
-const paths = ["", "/features", "/features/calendar", "/pricing"] as const;
+const paths = [
+  "",
+  "/features",
+  "/features/calendar",
+  "/features/ai-agent",
+  "/features/channel-manager",
+  "/features/direct-booking",
+  "/features/housekeeping",
+  "/features/team",
+  "/pricing",
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((lang) =>

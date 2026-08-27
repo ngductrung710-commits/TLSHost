@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { CalendarMock } from "@/components/mockups/CalendarMock";
-import { CalendarMonthMock } from "@/components/mockups/CalendarMonthMock";
+import { AiAssistantMock } from "@/components/mockups/AiAssistantMock";
+import { AiApprovalMock } from "@/components/mockups/SecondaryMocks";
 import { FeaturePage } from "@/components/sections/FeaturePage";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
-const PATH = "/features/calendar";
+const PATH = "/features/ai-agent";
 
 export async function generateMetadata(
-  props: PageProps<"/[lang]/features/calendar">,
+  props: PageProps<"/[lang]/features/ai-agent">,
 ): Promise<Metadata> {
   const { lang } = await props.params;
   if (!isLocale(lang)) return {};
-  const p = (await getDictionary(lang)).calendarPage;
+  const p = (await getDictionary(lang)).aiPage;
 
   return {
     title: p.meta.title,
@@ -35,8 +35,8 @@ export async function generateMetadata(
   };
 }
 
-export default async function CalendarFeaturePage(
-  props: PageProps<"/[lang]/features/calendar">,
+export default async function AiFeaturePage(
+  props: PageProps<"/[lang]/features/ai-agent">,
 ) {
   const { lang } = await props.params;
   if (!isLocale(lang)) notFound();
@@ -48,9 +48,9 @@ export default async function CalendarFeaturePage(
     <FeaturePage
       locale={locale}
       t={t}
-      copy={t.calendarPage}
-      first={{ icon: "board", mockup: <CalendarMock t={t} /> }}
-      second={{ icon: "edit", mockup: <CalendarMonthMock t={t} /> }}
+      copy={t.aiPage}
+      first={{ icon: "ai", mockup: <AiAssistantMock t={t} /> }}
+      second={{ icon: "team", mockup: <AiApprovalMock t={t} /> }}
     />
   );
 }

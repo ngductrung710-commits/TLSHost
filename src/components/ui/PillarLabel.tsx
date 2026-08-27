@@ -94,21 +94,34 @@ const icons: Record<PillarIcon, ReactNode> = {
   ),
 };
 
+/** Just the glyph, for callers that supply their own frame — the nav menu does. */
+export function PillarGlyph({
+  icon,
+  className = "h-4 w-4",
+}: {
+  icon: PillarIcon;
+  className?: string;
+}) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={`shrink-0 ${className}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {icons[icon]}
+    </svg>
+  );
+}
+
 export function PillarLabel({ icon, children }: { icon: PillarIcon; children: ReactNode }) {
   return (
     <p className="inline-flex items-center gap-2 rounded-full bg-ink-900 py-1.5 pl-2.5 pr-3.5">
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 24 24"
-        className="h-4 w-4 shrink-0 text-clay-300"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {icons[icon]}
-      </svg>
+      <PillarGlyph icon={icon} className="h-4 w-4 text-clay-300" />
       <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-sand-200">
         {children}
       </span>

@@ -32,6 +32,20 @@ const vi = {
     closeMenu: "Đóng menu điều hướng",
     langLabel: "Chọn ngôn ngữ",
     skipToContent: "Chuyển tới nội dung chính",
+
+    /* The features dropdown. `slug` keys both the route and the glyph — the
+       icon map lives in the menu component, not here, because a dictionary
+       should carry words rather than component names. */
+    menuLabel: "Nền tảng",
+    allFeatures: "Xem tất cả tính năng",
+    menu: [
+      { slug: "calendar", title: "Lịch & vận hành", blurb: "Mọi chỗ nghỉ, mọi đặt phòng — một bảng." },
+      { slug: "ai-agent", title: "Trợ lý AI vận hành", blurb: "Soạn sẵn việc lặt vặt. Chờ bạn duyệt." },
+      { slug: "channel-manager", title: "Đồng bộ kênh", blurb: "Từ Airbnb đến Agoda, luôn khớp nhau." },
+      { slug: "direct-booking", title: "Trang đặt phòng trực tiếp", blurb: "Cửa hàng của riêng bạn. Không hoa hồng." },
+      { slug: "housekeeping", title: "Ứng dụng buồng phòng", blurb: "Nhân viên thấy ngay phòng cần dọn, trên mọi điện thoại." },
+      { slug: "team", title: "Đội ngũ & phân quyền", blurb: "Quyền truy cập rõ ràng, trách nhiệm minh bạch." },
+    ],
   },
 
   hero: {
@@ -450,6 +464,471 @@ const vi = {
     },
   },
 
+  aiPage: {
+    meta: {
+      title: "Trợ lý AI vận hành",
+      description:
+        "Một trợ lý hội thoại ngay trong không gian làm việc: nó soạn sẵn thay đổi về đặt phòng, giá và thanh toán, rồi chờ bạn duyệt.",
+    },
+    back: "Tất cả tính năng",
+
+    hero: {
+      eyebrow: "Trợ lý AI vận hành",
+      title: "Nó soạn. Bạn duyệt.",
+      body: "Nhờ bằng tiếng Việt đời thường, như nhờ một đồng nghiệp. Trợ lý dựng sẵn thay đổi, trình bày chính xác thứ sẽ đổi, rồi dừng lại chờ. Quyền quyết định không đi đâu cả.",
+    },
+
+    overview: {
+      eyebrow: "Ngôn ngữ đời thường",
+      title: "Không cú pháp, không menu phải lùng",
+      body: "Tạo một đặt phòng, đổi giá cuối tuần, khóa phòng bảo trì, ghi nhận một khoản khách vừa chuyển. Cứ mô tả bằng lời của bạn — trợ lý hiểu ý định và dựng đúng thao tác.",
+      bullets: [
+        "Nhờ bằng câu nói thường ngày, không phải học lệnh",
+        "Soạn được đặt phòng, chỗ nghỉ, phòng, giá và thanh toán",
+        "Trả lời theo lối hội thoại, hiện dần từng câu",
+        "Nằm ngay trong không gian làm việc, không phải tab riêng",
+      ],
+    },
+
+    control: {
+      eyebrow: "Bạn đặt luật",
+      title: "Không dòng dữ liệu nào được ghi trước cái gật đầu của bạn",
+      body: "Mỗi đề xuất là một bản nháp kèm phần xem trước đầy đủ. Duyệt thì nó có hiệu lực; từ chối thì không có gì xảy ra. Bạn nhân đôi sức làm mà không giao đi quyền kiểm soát.",
+      bullets: [
+        "Bản xem trước đầy đủ trước khi bất cứ gì được ghi",
+        "Nháp có hạn dùng, hết hạn thì phải soạn lại",
+        "Khi duyệt, hệ thống kiểm tra lại từ đầu trên dữ liệu mới nhất",
+        "Hoàn tiền và huỷ đặt phòng luôn phải chờ bạn, không có ngoại lệ",
+      ],
+    },
+
+    journey: {
+      eyebrow: "Vòng đời một đề xuất",
+      title: "Ba bước, và quyền quyết định vẫn ở chỗ cũ",
+      body: "Trợ lý gánh phần soạn thảo. Phần quyết định thì không bao giờ rời khỏi tay bạn.",
+      steps: [
+        {
+          title: "Bạn nhờ",
+          body: "Nói điều cần làm bằng lời của bạn. Trợ lý đọc lịch và giá hiện tại trước khi đề xuất bất cứ điều gì.",
+        },
+        {
+          title: "Nó soạn",
+          body: "Một bản nháp hiện ra kèm đúng những dòng sẽ thay đổi — không phải câu văn mô tả, mà chính phần chênh lệch.",
+        },
+        {
+          title: "Bạn duyệt",
+          body: "Một cú bấm là áp dụng. Từ chối thì không có gì xảy ra, và nhật ký ghi lại cả người đề xuất lẫn người duyệt.",
+        },
+      ],
+      always: {
+        label: "Tuỳ bạn chỉnh",
+        title: "Hạn mức tự duyệt",
+        body: "Đặt một ngưỡng để việc nhỏ chạy thẳng và chỉ báo lại: khóa một đêm, sửa một ghi chú. Vượt ngưỡng thì nó dừng chờ. Ngưỡng do bạn đặt, và bạn đổi được bất cứ lúc nào.",
+      },
+    },
+
+    stats: [
+      { value: "0", caption: "Ngoại lệ", label: "Số thay đổi được ghi mà không qua tay bạn" },
+      { value: "24/7", caption: "Không hết ca", label: "Trợ lý luôn sẵn sàng soạn phần việc lặp lại" },
+      { value: "100%", caption: "Minh bạch", label: "Đề xuất nào cũng kèm phần chênh lệch đầy đủ" },
+    ],
+
+    faq: {
+      title: "Hỏi về trợ lý",
+      items: [
+        {
+          q: "Trợ lý có tự ý thay đổi gì không?",
+          a: "Không, và đây là ràng buộc kỹ thuật chứ không phải lời hứa. Trợ lý không có công cụ nào ghi thẳng vào dữ liệu — nó chỉ tạo được bản nháp. Việc áp dụng là một thao tác riêng, do bạn thực hiện.",
+        },
+        {
+          q: "Tôi có phải học lệnh gì không?",
+          a: "Không. Gõ như khi bạn giải thích cho một người mới vào làm. Nếu câu nhờ còn thiếu thông tin, trợ lý hỏi lại thay vì đoán.",
+        },
+        {
+          q: "Nếu lịch thay đổi sau khi nó soạn nháp thì sao?",
+          a: "Lúc bạn bấm duyệt, hệ thống kiểm tra lại trên dữ liệu mới nhất. Nếu trong lúc đó một kênh OTA đã bán mất chính đêm ấy, đề xuất bị từ chối kèm lý do thay vì âm thầm ghi đè.",
+        },
+      ],
+    },
+
+    cta: {
+      title: "Giao đi phần việc lặp lại.",
+      body: "Giữ nguyên quyền quyết định. Bắt đầu miễn phí hôm nay.",
+    },
+  },
+
+  channelsPage: {
+    meta: {
+      title: "Đồng bộ kênh OTA",
+      description:
+        "iCal hai chiều với Airbnb, Booking.com, Agoda, Traveloka và mọi OTA hỗ trợ iCal. Tự làm mới mỗi giờ, có chốt chặn chống mất lịch khóa.",
+    },
+    back: "Tất cả tính năng",
+
+    hero: {
+      eyebrow: "Đồng bộ kênh",
+      title: "Bán khắp nơi. Không đụng nhau.",
+      body: "Kết nối iCal hai chiều với mọi OTA lớn. Một đêm bán ở bất kỳ đâu sẽ tự khóa ở tất cả những nơi còn lại, và bạn không phải mở kênh nào ra đối soát.",
+    },
+
+    overview: {
+      eyebrow: "Độ phủ",
+      title: "Một lần kết nối, mọi kênh cùng biết",
+      body: "Dán link iCal của từng kênh vào một lần. Từ đó tình trạng phòng chảy cả hai hướng — đặt phòng OTA về với bạn, lịch khóa của bạn ra với họ.",
+      bullets: [
+        "Nhập và xuất iCal, cả hai chiều",
+        "Airbnb, Booking.com, Agoda, Traveloka và mọi OTA có iCal",
+        "Thêm một kênh mới mất chưa tới hai phút",
+        "Mỗi loại phòng có link xuất riêng, ổn định theo thời gian",
+      ],
+    },
+
+    control: {
+      eyebrow: "Không trùng phòng",
+      title: "Bán một đêm, khóa ở mọi nơi",
+      body: "Đặt phòng trực tiếp và đặt phòng từ OTA nằm chung một lịch, nên chúng không thể rơi vào cùng một đêm. Nếu hai kênh cùng nhắm một đêm, hệ thống chặn ở tầng cơ sở dữ liệu và báo cho bạn.",
+      bullets: [
+        "Tự làm mới mỗi giờ, không cần bấm tay",
+        "Trùng phòng bị chặn ở tầng dữ liệu, không phải ở tầng giao diện",
+        "Xung đột được báo kèm đúng hai bên tranh chấp",
+        "Mọi lượt đồng bộ đều lưu lại: thấy gì, áp dụng gì, giữ lại gì",
+      ],
+    },
+
+    journey: {
+      eyebrow: "Một lượt đồng bộ",
+      title: "Điều gì xảy ra mỗi giờ",
+      body: "Phần thêm áp dụng ngay. Phần xoá thì không — vì hai chiều đó không nguy hiểm như nhau.",
+      steps: [
+        {
+          title: "Tải",
+          body: "Lấy feed của từng kênh. Mạng lỗi hay kênh trả về trang báo lỗi thì lượt này dừng, và lịch khóa hiện có không bị đụng tới.",
+        },
+        {
+          title: "Đối chiếu",
+          body: "Mỗi sự kiện được khớp theo mã định danh riêng. Đêm mới thành lịch khóa mới; kỳ lưu trú đổi ngày thì cập nhật tại chỗ.",
+        },
+        {
+          title: "Ghi nhận",
+          body: "Lượt chạy được lưu lại kèm số sự kiện thấy, số áp dụng và số giữ lại chờ xem — để câu hỏi 'vì sao mất lịch khóa' luôn có câu trả lời.",
+        },
+      ],
+      always: {
+        label: "Chốt chặn",
+        title: "Xoá là chiều nguy hiểm",
+        body: "Thêm nhầm một lịch khóa chỉ làm bạn mất một lượt đặt. Xoá nhầm thì bạn bán một căn phòng đã có khách. Nên feed đột nhiên rỗng, hoặc một lượt làm biến mất quá nhiều lịch khóa, đều bị giữ lại chờ bạn xem thay vì thi hành ngay.",
+      },
+    },
+
+    stats: [
+      { value: "60′", caption: "Chu kỳ", label: "Mỗi kênh đã kết nối được làm mới mỗi giờ" },
+      { value: "2", caption: "Chiều", label: "Đặt phòng vào, lịch khóa ra — cùng một kết nối" },
+      { value: "0", caption: "Mục tiêu", label: "Số đêm bị bán hai lần trên các kênh đã kết nối" },
+    ],
+
+    faq: {
+      title: "Hỏi về đồng bộ kênh",
+      items: [
+        {
+          q: "Tôi kết nối được những kênh nào?",
+          a: "Bất kỳ OTA nào hỗ trợ iCal, trong đó có Airbnb, Booking.com, Agoda, Traveloka, Expedia và VRBO. Không cần chờ xét duyệt đối tác.",
+        },
+        {
+          q: "Đồng bộ có đẩy được giá sang OTA không?",
+          a: "Không. iCal chỉ mang thông tin ngày bận hay trống — không mang giá, không mang tên khách. Đẩy giá cần API đối tác của từng hãng, mỗi hãng một quy trình xét duyệt riêng, và việc đó nằm ngoài phạm vi hiện tại.",
+        },
+        {
+          q: "Nếu một kênh gặp sự cố thì sao?",
+          a: "Lượt đồng bộ đó dừng và giãn dần thời gian thử lại, không đụng vào lịch khóa đang có. Hỏng năm lượt liên tiếp thì bạn nhận email — một kênh hỏng âm thầm còn tệ hơn một kênh báo lỗi.",
+        },
+      ],
+    },
+
+    cta: {
+      title: "Bật đồng bộ rồi quên nó đi.",
+      body: "Kết nối các kênh và thôi phải đối soát bằng tay.",
+    },
+  },
+
+  directPage: {
+    meta: {
+      title: "Trang đặt phòng trực tiếp",
+      description:
+        "Mỗi chỗ nghỉ có một trang đặt phòng mang thương hiệu của bạn trên link riêng. Khách đặt thẳng, xác nhận tức thì, không mất hoa hồng.",
+    },
+    back: "Tất cả tính năng",
+
+    hero: {
+      eyebrow: "Đặt phòng trực tiếp",
+      title: "Cửa hàng của bạn. Doanh thu của bạn.",
+      body: "Một trang đặt phòng trên đường link của riêng bạn, cho từng chỗ nghỉ. Khách chọn ngày, đặt và được xác nhận ngay. Lượt đặt đổ thẳng vào cùng chiếc lịch với đặt phòng OTA — và không ai xén phần trăm nào.",
+    },
+
+    overview: {
+      eyebrow: "Cửa hàng của bạn",
+      title: "Một đường link bạn chia sẻ được ở bất cứ đâu",
+      body: "Dán vào bio, gửi trong tin nhắn, gắn vào quảng cáo, in lên tấm thiệp trong phòng. Khách thấy phòng trống thật và đặt được ngay, không có OTA đứng giữa.",
+      bullets: [
+        "Trang mang tên và hình ảnh của chỗ nghỉ bạn",
+        "Link công khai riêng cho từng chỗ nghỉ",
+        "Phòng trống lấy trực tiếp từ lịch, không phải bản sao",
+        "Xác nhận gửi cho khách ngay khi đặt xong",
+      ],
+    },
+
+    control: {
+      eyebrow: "Doanh thu giữ lại",
+      title: "Cắt hoa hồng, và giữ luôn mối quan hệ",
+      body: "Một lượt đặt trực tiếp là mối quan hệ bạn sở hữu từ cú bấm đầu tiên tới lúc khách trả phòng. Email của khách là của bạn, nên lần sau họ quay lại thẳng chỗ bạn.",
+      bullets: [
+        "0% hoa hồng trên mỗi lượt đặt, ở mọi gói",
+        "Thuê bao cố định, không phí ẩn theo lượt",
+        "Thông tin khách thuộc về bạn, không thuộc về kênh",
+        "Đặt phòng trực tiếp và OTA dùng chung một lịch",
+      ],
+    },
+
+    journey: {
+      eyebrow: "Từ link tới lượt đặt",
+      title: "Ba bước, không ai đứng giữa",
+      body: "Khách không phải tạo tài khoản, không phải tải ứng dụng, và không đi qua kênh nào khác.",
+      steps: [
+        {
+          title: "Khách mở link",
+          body: "Trang hiện phòng trống thật theo lịch của bạn, cùng giá đúng cho khoảng ngày họ chọn.",
+        },
+        {
+          title: "Khách đặt",
+          body: "Chọn ngày, điền thông tin, xác nhận. Không tài khoản, không bước thừa nào giữa ý định và lượt đặt.",
+        },
+        {
+          title: "Vào lịch",
+          body: "Lượt đặt hiện trên bảng ngay lập tức và khóa đêm đó ở mọi kênh đã kết nối, ngay lần đồng bộ kế tiếp.",
+        },
+      ],
+      always: {
+        label: "Nói cho rõ",
+        title: "Trực tiếp không thay thế OTA",
+        body: "OTA vẫn là nơi khách mới tìm thấy bạn, và điều đó đáng tiền hoa hồng. Trang trực tiếp dành cho nhóm khác: khách quay lại, khách được giới thiệu, khách thấy bạn trên mạng xã hội. Với nhóm đó thì trả hoa hồng là mất tiền oan.",
+      },
+    },
+
+    stats: [
+      { value: "0%", caption: "Vĩnh viễn", label: "Hoa hồng trên đặt phòng trực tiếp, ở mọi gói" },
+      { value: "1", caption: "Lịch chung", label: "Cho cả đặt phòng trực tiếp lẫn đặt phòng OTA" },
+      { value: "100%", caption: "Của bạn", label: "Doanh thu và thông tin khách từ lượt đặt trực tiếp" },
+    ],
+
+    faq: {
+      title: "Hỏi về đặt phòng trực tiếp",
+      items: [
+        {
+          q: "Đã bán trên Airbnb rồi, tôi cần trang riêng làm gì?",
+          a: "OTA mang khách mới tới, nhưng họ giữ phần trăm và giữ luôn quan hệ với khách. Trang riêng là nơi bạn nhận những lượt đặt vốn đã thuộc về mình: khách cũ quay lại, khách được bạn bè giới thiệu, khách theo dõi bạn trên mạng xã hội.",
+        },
+        {
+          q: "Lượt đặt trực tiếp đi về đâu?",
+          a: "Thẳng vào cùng chiếc lịch với đặt phòng OTA. Đêm đó bị khóa trên mọi kênh đã kết nối, nên không có chuyện bán trùng.",
+        },
+        {
+          q: "Khách trả tiền như thế nào?",
+          a: "Ở phiên bản hiện tại, trang thu thông tin đặt phòng và gửi hướng dẫn thanh toán trong email xác nhận; bạn ghi nhận khoản tiền khi nhận được. Cổng thanh toán trực tuyến nằm trong kế hoạch, chưa có ở bản này.",
+        },
+      ],
+    },
+
+    cta: {
+      title: "Giữ trọn lượt đặt kế tiếp.",
+      body: "Mở trang đặt phòng của bạn và thôi trả hoa hồng cho khách vốn đã là của mình.",
+    },
+  },
+
+  housekeepingPage: {
+    meta: {
+      title: "Buồng phòng",
+      description:
+        "Mỗi lượt trả phòng tự thành một việc cần dọn. Nhân viên xem trên điện thoại, chạm một lần báo sạch, chủ nhà theo dõi tiến độ ngay trên lịch.",
+    },
+    back: "Tất cả tính năng",
+
+    hero: {
+      eyebrow: "Buồng phòng",
+      title: "Khách đi, phòng vào việc.",
+      body: "Không nhóm chat, không danh sách giấy, không ai phải nhớ. Lượt trả phòng tự sinh ra việc cần dọn, việc tự tới đúng người, và bảng lịch cập nhật ngay khi phòng xong.",
+    },
+
+    overview: {
+      eyebrow: "Cho đội dọn phòng",
+      title: "Mở điện thoại là thấy việc của mình",
+      body: "Nhân viên đăng nhập và thấy đúng những phòng được giao — phòng nào khách vừa đi, phòng nào chuyển khách trong ngày, phòng nào khách còn ở tiếp.",
+      bullets: [
+        "Phòng tự chuyển sang cần dọn ngay khi khách trả phòng",
+        "Có ngữ cảnh: trả phòng, chuyển khách hay khách ở tiếp",
+        "Một chạm báo sạch, cả đội thấy tức thì",
+        "Chỉ thấy phòng được giao, không thấy giá hay thông tin thanh toán",
+      ],
+    },
+
+    control: {
+      eyebrow: "Cho chủ nhà và quản lý",
+      title: "Tiến độ dọn phòng, không phải hỏi ai",
+      body: "Một bảng kiểm tra dựng theo ngày hôm nay: phòng nào xong, phòng nào đang làm, phòng nào cần chú ý — đặt cạnh danh sách khách đến và đi trong ngày.",
+      bullets: [
+        "Bảng kiểm tra gom toàn bộ phòng trong ngày",
+        "Trạng thái: sạch, cần dọn, đã kiểm tra, đang bảo trì",
+        "Trạng thái hiện luôn trên ô phòng ở bảng lịch",
+        "Gắn cờ bảo trì để phòng không bị bán ra",
+      ],
+    },
+
+    journey: {
+      eyebrow: "Từ trả phòng tới nhận phòng",
+      title: "Một vòng dọn phòng, không đứt đoạn",
+      body: "Mỗi phòng đi hết chu trình mà không ai phải theo dõi bằng trí nhớ.",
+      steps: [
+        {
+          title: "Trả phòng",
+          body: "Khách rời đi, phòng tự chuyển sang cần dọn và xuất hiện trong danh sách của người phụ trách.",
+        },
+        {
+          title: "Dọn",
+          body: "Nhân viên làm xong, chạm một lần báo sạch. Bảng lịch và bảng kiểm tra đổi theo ngay lúc đó.",
+        },
+        {
+          title: "Kiểm tra",
+          body: "Quản lý xác nhận, phòng chuyển sang sẵn sàng. Lượt khách kế tiếp không bao giờ là một canh bạc.",
+        },
+      ],
+      always: {
+        label: "Trên điện thoại",
+        title: "Không phải cài ứng dụng",
+        body: "Giao diện dọn phòng chạy trên trình duyệt điện thoại và thêm ra màn hình chính được như một ứng dụng. Không kho ứng dụng, không bản cập nhật, không thiết bị nào bị bỏ lại vì máy quá cũ.",
+      },
+    },
+
+    stats: [
+      { value: "1", caption: "Thao tác", label: "Số lần chạm để báo một phòng đã sạch" },
+      { value: "0", caption: "Đã bỏ", label: "Danh sách giấy và nhóm chat cần duy trì" },
+      { value: "100%", caption: "Tự động", label: "Lượt trả phòng tự sinh ra việc cần dọn" },
+    ],
+
+    faq: {
+      title: "Hỏi về buồng phòng",
+      items: [
+        {
+          q: "Nhân viên có phải cài ứng dụng không?",
+          a: "Không. Giao diện chạy trên trình duyệt điện thoại và thêm ra màn hình chính được. Máy Android cũ hay iPhone đời đầu đều dùng được.",
+        },
+        {
+          q: "Nhân viên dọn phòng nhìn thấy những gì?",
+          a: "Chỉ những chỗ nghỉ và phòng bạn giao, kèm việc cần làm hôm nay. Họ không thấy giá phòng, doanh thu hay thông tin thanh toán của khách.",
+        },
+        {
+          q: "Nhiều người dùng chung một điện thoại thì sao?",
+          a: "Đó là tình huống phổ biến nhất trên thực tế. Thiết bị đăng nhập một lần theo chỗ nghỉ, mỗi người có mã riêng để hệ thống vẫn ghi được ai đã làm việc gì.",
+        },
+      ],
+    },
+
+    cta: {
+      title: "Cho đội dọn phòng một danh sách đúng.",
+      body: "Thiết lập trong vài phút. Có sẵn ở mọi gói.",
+    },
+  },
+
+  teamPage: {
+    meta: {
+      title: "Đội ngũ & phân quyền",
+      description:
+        "Giao cho mỗi cộng tác viên đúng chỗ nghỉ họ phụ trách, quyết định ai được sửa đặt phòng của ai, và biết ai đã tạo từng bản ghi.",
+    },
+    back: "Tất cả tính năng",
+
+    hero: {
+      eyebrow: "Đội ngũ & phân quyền",
+      title: "Giao việc, đừng giao mật khẩu.",
+      body: "Mỗi người một tài khoản, mỗi tài khoản một phạm vi. Cộng tác viên thấy đúng phần việc được giao, và mọi bản ghi đều mang tên người tạo ra nó.",
+    },
+
+    overview: {
+      eyebrow: "Phạm vi",
+      title: "Ai cũng chỉ thấy phần của mình",
+      body: "Mời một người và giao cho họ đúng những chỗ nghỉ, những loại phòng họ phụ trách — không hơn. Người quản An Bàng không cần nhìn thấy Hội An.",
+      bullets: [
+        "Phân quyền tới từng chỗ nghỉ và từng loại phòng",
+        "Cổng riêng cho cộng tác viên, chỉ hiện phạm vi được giao",
+        "Mời qua email, người được mời tự đặt mật khẩu",
+        "Giao diện rút gọn theo vai trò, không bày thứ họ không dùng",
+      ],
+    },
+
+    control: {
+      eyebrow: "Trách nhiệm",
+      title: "Biết ai đã làm gì, và lúc nào",
+      body: "Bạn quyết định ai được sửa đặt phòng của ai. Mọi thay đổi đều để lại dấu vết, nên khi có gì đó không khớp, câu hỏi 'ai làm' luôn có câu trả lời.",
+      bullets: [
+        "Bật hoặc tắt quyền sửa đặt phòng của người khác",
+        "Mỗi đặt phòng ghi rõ người tạo",
+        "Nhật ký lưu người thực hiện, thao tác và thời điểm",
+        "Đề xuất của trợ lý AI ghi cả người duyệt",
+      ],
+    },
+
+    journey: {
+      eyebrow: "Thêm một người",
+      title: "Ba bước là xong",
+      body: "Từ lúc quyết định giao việc tới lúc người đó bắt đầu làm, không có bước nào cần tới bạn nữa.",
+      steps: [
+        {
+          title: "Mời",
+          body: "Nhập email và chọn vai trò. Lời mời gửi đi, người nhận tự đặt mật khẩu của họ.",
+        },
+        {
+          title: "Giao phạm vi",
+          body: "Tích những chỗ nghỉ và loại phòng họ phụ trách. Phạm vi có hiệu lực ngay, không cần họ đăng nhập lại.",
+        },
+        {
+          title: "Theo dõi",
+          body: "Từ đó mọi thao tác của họ đều hiện trong nhật ký, gắn với tên và thời điểm.",
+        },
+      ],
+      always: {
+        label: "Lớn dần",
+        title: "Bắt đầu một mình cũng không sao",
+        body: "Phần lớn chủ nhà bắt đầu với một tài khoản duy nhất và không cần đụng tới mục này. Nó nằm sẵn đó cho ngày bạn thuê người đầu tiên — không phải đổi công cụ, không phải chuyển dữ liệu.",
+      },
+    },
+
+    stats: [
+      { value: "1:1", caption: "Từng người", label: "Phạm vi riêng cho mỗi chỗ nghỉ và loại phòng" },
+      { value: "100%", caption: "Truy vết", label: "Bản ghi nào cũng mang tên người tạo" },
+      { value: "0", caption: "Dùng chung", label: "Số mật khẩu phải chia sẻ giữa các thành viên" },
+    ],
+
+    faq: {
+      title: "Hỏi về đội ngũ & phân quyền",
+      items: [
+        {
+          q: "Tôi giới hạn được những gì cộng tác viên nhìn thấy?",
+          a: "Được, tới từng chỗ nghỉ và từng loại phòng. Họ đăng nhập vào một cổng riêng chỉ hiện phạm vi được giao, tách khỏi không gian làm việc của bạn.",
+        },
+        {
+          q: "Cộng tác viên có sửa được đặt phòng của nhau không?",
+          a: "Chỉ khi bạn cho phép. Đây là một công tắc riêng cho từng người, mặc định tắt. Dù bật hay tắt, mỗi đặt phòng vẫn ghi lại người tạo ra nó.",
+        },
+        {
+          q: "Số thành viên có bị giới hạn không?",
+          a: "Thành viên và phân quyền nằm ở gói Chuyên nghiệp, không giới hạn số người. Gói thấp hơn dùng một tài khoản chủ nhà.",
+        },
+      ],
+    },
+
+    cta: {
+      title: "Đưa cả đội lên cùng một hệ thống.",
+      body: "Phân quyền từng người, truy vết từng bản ghi. Bắt đầu miễn phí.",
+    },
+  },
+
   pricingPage: {
     eyebrow: "Bảng giá",
     title: "Mức giá tự trả lại tiền cho nó",
@@ -696,6 +1175,46 @@ const vi = {
       keepAll: "Giữ 100%",
       youGet: "BẠN NHẬN",
       perBooking: "mỗi lượt đặt, giữ lại",
+    },
+    approval: {
+      title: "Chờ duyệt",
+      kind: "HOÀN TIỀN",
+      headline: "Hoàn 2.400.000 ₫ cho Linh Trần",
+      meta: "Trợ lý AI đề xuất · Đặt phòng #2418",
+      reason: "Vượt hạn mức tự duyệt — cần bạn xác nhận",
+      approve: "Duyệt",
+      reject: "Từ chối",
+      note: "Bạn đặt luật. Trợ lý không tự ý hành động.",
+    },
+    conflict: {
+      title: "Đã chặn trùng phòng",
+      subtitle: "Garden Suite · 14–17/7",
+      kept: "Giữ",
+      blocked: "Đã chặn",
+      nights: "đêm",
+      note: "Đêm trùng bị chặn tức thì trên mọi kênh.",
+    },
+    board: {
+      title: "Buồng phòng",
+      subtitle: "Bảng kiểm tra · Hôm nay",
+      markAll: "Đánh dấu tất cả đã sạch",
+      inspected: "Đã kiểm tra",
+      maintenance: "Bảo trì",
+      checkout: "Trả phòng",
+      turnover: "Chuyển khách",
+      stayover: "Khách ở tiếp",
+    },
+    activity: {
+      title: "Hoạt động",
+      subtitle: "Theo dõi người tạo",
+      live: "Trực tiếp",
+      note: "Mỗi bản ghi đều mang tên người tạo.",
+      entries: [
+        { who: "Mai Lê", what: "tạo đặt phòng #A2391", when: "vừa xong" },
+        { who: "Trang Đỗ", what: "dọn xong Garden Suite", when: "8 phút trước" },
+        { who: "Hoàng Vũ", what: "sửa kỳ lưu trú Sky Loft", when: "24 phút trước" },
+        { who: "Bảo Nguyễn", what: "cấp quyền cho Trang Đỗ", when: "51 phút trước" },
+      ],
     },
   },
 };
