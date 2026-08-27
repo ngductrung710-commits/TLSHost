@@ -5,7 +5,9 @@ import {
   Section,
   SectionHeading,
 } from "@/components/ui/primitives";
+import { ChannelMarquee } from "@/components/sections/ChannelMarquee";
 import { Reveal } from "@/components/ui/Reveal";
+import { availableChannelLogos } from "@/lib/channelLogos";
 import { signUpUrl } from "@/lib/links";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
@@ -22,18 +24,8 @@ export function ChannelStrip({ t }: { t: Dictionary }) {
           <Eyebrow>{t.channels.eyebrow}</Eyebrow>
         </Reveal>
 
-        {/* A static row, not a carousel — nothing to pause, nothing to announce */}
-        <Reveal delay={80}>
-          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
-            {t.channels.names.map((name) => (
-              <li
-                key={name}
-                className="font-[family-name:var(--font-display)] text-lg text-ink-400 transition-colors duration-300 hover:text-ink-700 sm:text-xl"
-              >
-                {name}
-              </li>
-            ))}
-          </ul>
+        <Reveal delay={80} className="mt-7">
+          <ChannelMarquee t={t} logos={availableChannelLogos(t.channels.names)} />
         </Reveal>
       </Container>
     </Section>

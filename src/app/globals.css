@@ -263,3 +263,104 @@
     background: #fff;
   }
 }
+
+/* --- Channel marquee ------------------------------------------------------
+   Two identical tracks slide as one; translating the pair by exactly -50%
+   lands the second copy where the first began, so the loop has no seam.
+   -------------------------------------------------------------------------- */
+
+@layer components {
+  .marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    /* Fade both edges so logos enter and leave instead of being chopped. */
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 7%,
+      #000 93%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 7%,
+      #000 93%,
+      transparent
+    );
+  }
+
+  .marquee__track {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    padding-right: clamp(2.5rem, 6vw, 5rem);
+    margin: 0;
+    list-style: none;
+    animation: marqueeScroll 34s linear infinite;
+    will-change: transform;
+  }
+
+  /* Stop on hover, and on keyboard focus anywhere in the block — WCAG 2.2.2.
+     Scoped to the wrapper, not the strip: the only focusable thing here is the
+     toggle, and it sits beside the strip rather than inside it. */
+  .marquee-wrap:hover .marquee__track,
+  .marquee-wrap:focus-within .marquee__track,
+  .marquee[data-paused="true"] .marquee__track {
+    animation-play-state: paused;
+  }
+
+  .marquee__item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: clamp(1.0625rem, 2.4vw, 1.375rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--color-ink-400);
+    transition: color 0.3s var(--ease-out-soft);
+  }
+
+  .marquee-wrap:hover .marquee__item {
+    color: var(--color-ink-600);
+  }
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* A strip that never moves needs no control, and nothing to un-chop at the
+   edges — so drop the animation, the duplicate copy and the toggle together. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1rem;
+    padding-right: 0;
+  }
+
+  .marquee__track[aria-hidden="true"],
+  .marquee__toggle {
+    display: none;
+  }
+}
+
+/* Logos are normalised to one optical height; their natural widths differ by
+   more than 3x, so width follows the aspect ratio rather than being forced. */
+.marquee__logo {
+  height: clamp(22px, 3.2vw, 30px);
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}

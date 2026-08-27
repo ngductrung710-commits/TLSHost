@@ -109,7 +109,9 @@ const vi = {
     eyebrow: "Đồng bộ với nơi bạn đang bán",
     title: "Bán ở mọi kênh. Không phải đối soát ở đâu cả.",
     body: "Kết nối iCal hai chiều với mọi OTA lớn. Một đêm được bán ở bất kỳ đâu sẽ tự khóa ở tất cả những nơi còn lại.",
-    names: ["Airbnb", "Booking.com", "Agoda", "Traveloka", "Expedia", "VRBO"],
+    names: ["Airbnb", "Booking.com", "Agoda", "Traveloka", "Trip.com", "Expedia", "VRBO"],
+    pause: "Tạm dừng",
+    play: "Chạy tiếp",
   },
 
   platform: {

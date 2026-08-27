@@ -103,7 +103,9 @@ const en: Dictionary = {
     eyebrow: "Syncs with where you already sell",
     title: "Sell everywhere. Reconcile nowhere.",
     body: "Two-way iCal connections to every major OTA. A night sold anywhere blocks itself everywhere else.",
-    names: ["Airbnb", "Booking.com", "Agoda", "Traveloka", "Expedia", "VRBO"],
+    names: ["Airbnb", "Booking.com", "Agoda", "Traveloka", "Trip.com", "Expedia", "VRBO"],
+    pause: "Pause",
+    play: "Resume",
   },
 
   platform: {
