@@ -73,7 +73,7 @@ const vi = {
        word, so a long one eats a whole line on its own and tips the headline
        from two lines to three. */
     rotator: {
-      words: ["Đặt phòng", "Kênh OTA", "Buồng phòng", "Kho phòng"],
+      words: ["Đặt phòng", "Kênh OTA", "Buồng phòng", "Thanh toán"],
       tail: "của bạn,",
       emphasis: "chạy tự động.",
     },
