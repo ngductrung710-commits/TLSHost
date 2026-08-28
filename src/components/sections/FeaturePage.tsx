@@ -9,12 +9,42 @@ import { Reveal } from "@/components/ui/Reveal";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
 
+type Panel_ = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  bullets: readonly string[];
+};
+
 /**
  * Shape every feature detail page shares. Typing the six pages against one
  * shape means a key missing from any of them is a compile error rather than a
  * blank section discovered in the browser.
+ *
+ * Written out rather than derived from one page, because the journey section
+ * genuinely differs between them: some run three stages with a fourth thing
+ * that happens alongside all of them, some run four stages and nothing
+ * alongside, and some carry no lead-in sentence at all. Deriving the type from
+ * whichever page happened to be first would force the other five to carry
+ * empty keys to satisfy it.
  */
-export type FeaturePageCopy = Dictionary["calendarPage"];
+export type FeaturePageCopy = {
+  meta: { title: string; description: string };
+  back: string;
+  hero: { eyebrow: string; title: string; body: string };
+  overview: Panel_;
+  control: Panel_;
+  journey: {
+    eyebrow: string;
+    title: string;
+    body?: string;
+    steps: readonly { title: string; body: string }[];
+    always?: { label: string; title: string; body: string };
+  };
+  stats: readonly { value: string; caption: string; label: string }[];
+  faq: { title: string; items: readonly { q: string; a: string }[] };
+  cta: { title: string; body: string };
+};
 
 type Panel = { icon: PillarIcon; mockup: ReactNode };
 
@@ -108,7 +138,13 @@ export function FeaturePage({
             />
           </Reveal>
 
-          <ol className="mt-12 grid gap-5 sm:grid-cols-3">
+          <ol
+            className={`mt-12 grid gap-5 ${
+              copy.journey.steps.length === 4
+                ? "sm:grid-cols-2 lg:grid-cols-4"
+                : "sm:grid-cols-3"
+            }`}
+          >
             {copy.journey.steps.map((step, i) => (
               <li key={step.title}>
                 <Reveal delay={i * 70} className="h-full">
@@ -131,21 +167,23 @@ export function FeaturePage({
             ))}
           </ol>
 
-          <Reveal delay={230}>
-            <article className="mt-5 rounded-2xl border border-clay-200 bg-clay-50 p-6 sm:flex sm:items-start sm:gap-6">
-              <p className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.09em] text-clay-600 sm:w-32 sm:pt-1">
-                {copy.journey.always.label}
-              </p>
-              <div className="mt-3 sm:mt-0">
-                <h3 className="text-[17px] font-semibold leading-snug text-ink-900">
-                  {copy.journey.always.title}
-                </h3>
-                <p className="mt-2.5 max-w-2xl text-[16px] leading-relaxed text-ink-600">
-                  {copy.journey.always.body}
+          {copy.journey.always ? (
+            <Reveal delay={230}>
+              <article className="mt-5 rounded-2xl border border-clay-200 bg-clay-50 p-6 sm:flex sm:items-start sm:gap-6">
+                <p className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.09em] text-clay-600 sm:w-32 sm:pt-1">
+                  {copy.journey.always.label}
                 </p>
-              </div>
-            </article>
-          </Reveal>
+                <div className="mt-3 sm:mt-0">
+                  <h3 className="text-[17px] font-semibold leading-snug text-ink-900">
+                    {copy.journey.always.title}
+                  </h3>
+                  <p className="mt-2.5 max-w-2xl text-[16px] leading-relaxed text-ink-600">
+                    {copy.journey.always.body}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+          ) : null}
         </Container>
       </Section>
 

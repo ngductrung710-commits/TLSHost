@@ -376,91 +376,91 @@ const en: Dictionary = {
     meta: {
       title: "Calendar & operations",
       description:
-        "One multi-day board for the whole portfolio: bookings, blocked nights, housekeeping status and occupancy — edited in place.",
+        "Bookings, blocks, inventory and housekeeping across every property \u2014 on one fast multi-day board that stays the source of truth.",
     },
     back: "All features",
 
     hero: {
       eyebrow: "Calendar & operations",
       title: "One board. The whole picture.",
-      body: "Bookings, blocked nights, rooms still free and cleaning status across every property, on a single multi-day board. This is the original — every other number in TLSHost is read off it.",
+      body: "Bookings, blocks, inventory and housekeeping across every property \u2014 on one fast multi-day board that stays the source of truth.",
     },
 
     overview: {
       eyebrow: "One view",
       title: "Every property, side by side",
-      body: "Last week, today and the next three months across all your properties in one frame. No signing into six channels in turn, no reconciliation spreadsheet.",
+      body: "The past, present and future of all your properties and rooms on one board \u2014 no logging into each channel, no spreadsheet tab.",
       bullets: [
-        "Several properties and room types on one board",
-        "Bookings and blocked nights side by side on one day scale",
-        "Jump to any date or property in a single move",
-        "Occupancy recalculates the moment the board changes",
+        "See multiple properties and multiple rooms",
+        "Bookings and blocks side by side",
+        "Jump to any date or property fast",
+        "Live occupancy at a glance",
       ],
     },
 
     control: {
-      eyebrow: "Within reach",
-      title: "Edit in place",
-      body: "Drag across a few days and the booking exists. Move a stay, block a night for maintenance, switch a guest's room — on the board, without opening another screen.",
+      eyebrow: "In your control",
+      title: "Edit right on the board",
+      body: "Add a booking, move a stay or block a night in place. Changes take effect instantly and flow straight into your dashboard numbers.",
       bullets: [
-        "Drag across dates to create a booking",
-        "Move or extend a stay on its own bar",
+        "Create and edit bookings on the board",
         "Block nights for maintenance or owner stays",
-        "Revenue and arrivals change at the same moment",
+        "Housekeeping status per room",
+        "Dashboard numbers: revenue, occupancy, check-ins",
       ],
     },
 
     journey: {
-      eyebrow: "Across the stay",
-      title: "From booked to clean again",
-      body: "The board follows a guest's whole stay, so none of it has to live in your head.",
+      eyebrow: "End to end",
+      title: "From booking to housekeeping, no gaps",
+      body: "The board follows the guest's journey so nothing slips through a crack.",
       steps: [
         {
-          title: "Booked",
-          body: "New bookings — direct or synced back from an OTA — land on the board and take the room out of inventory as they arrive.",
+          title: "Booking",
+          body: "New bookings and blocks appear on the board and update occupancy the moment they are created.",
         },
         {
-          title: "Staying",
-          body: "Who is in, who arrives this afternoon, who leaves tomorrow — read off one row, no filtering.",
+          title: "Stay",
+          body: "Know who is in, who is arriving and who is leaving across every property.",
         },
         {
-          title: "Cleaned",
-          body: "Cleaning status sits on the room's own cell, so the next guest is never a surprise.",
+          title: "Housekeeping",
+          body: "Cleaning status sits on each room, so the next guest is never a surprise.",
         },
       ],
       always: {
-        label: "Throughout",
-        title: "The AI assistant",
-        body: "Ask the assistant to draft a change: move a room, slot a booking in, block a night. It proposes, you approve on the board. Nothing runs on its own.",
+        label: "With AI",
+        title: "AI operations assistant",
+        body: "Ask the operations assistant to draft a booking \u2014 it proposes the change, you approve it right on the board.",
       },
     },
 
     stats: [
-      { value: "1", caption: "Board", label: "For every property and room type you run" },
-      { value: "24/7", caption: "Assistant", label: "Always ready to draft a change for you to approve" },
-      { value: "0%", caption: "Commission", label: "On every direct booking, permanently" },
+      { value: "1", caption: "Board", label: "Board for every property and room" },
+      { value: "24/7", caption: "Assistant", label: "AI assistant ready to draft changes" },
+      { value: "0%", caption: "Commission", label: "Commission on direct bookings, forever" },
     ],
 
     faq: {
-      title: "Questions about the calendar",
+      title: "Calendar questions",
       items: [
         {
-          q: "Does the calendar cover every channel?",
-          a: "Yes. Direct bookings and bookings synced back from the OTAs sit on the same board, so a night cannot be sold twice.",
+          q: "Does the calendar show every channel?",
+          a: "Yes. Direct bookings and bookings synced from OTAs all sit on the same board, so a night is never sold twice.",
         },
         {
-          q: "What if I run several properties?",
-          a: "The board was built for several properties and room types from the start. You scan the whole portfolio without leaving the page.",
+          q: "Can I manage multiple properties?",
+          a: "The board was built for multiple properties and rooms \u2014 scan your whole portfolio without leaving the page.",
         },
         {
-          q: "Where do housekeeping and the numbers live?",
-          a: "Cleaning status sits on each room's cell. Revenue, occupancy and upcoming arrivals roll up to the dashboard on their own.",
+          q: "Where do housekeeping and numbers live?",
+          a: "Cleaning status sits on each room, while revenue, occupancy and upcoming check-ins roll up to the dashboard automatically.",
         },
       ],
     },
 
     cta: {
-      title: "Put the whole portfolio on one board.",
+      title: "Put everything on one board.",
       body: "Set up your first property and take a direct booking today.",
     },
   },
@@ -469,185 +469,182 @@ const en: Dictionary = {
     meta: {
       title: "AI operations assistant",
       description:
-        "A conversational assistant inside the workspace: it drafts changes to bookings, rates and payments, then waits for your approval.",
+        "A ChatGPT-style assistant inside your workspace. It handles the odd jobs in plain language \u2014 and proposes every change for you to approve first.",
     },
     back: "All features",
 
     hero: {
       eyebrow: "AI operations assistant",
-      title: "It drafts. You approve.",
-      body: "Ask in plain language, the way you would ask a colleague. The assistant stages the change, shows you exactly what would move, then stops and waits. The decision never leaves your hands.",
+      title: "AI drafts. You approve.",
+      body: "A ChatGPT-style assistant inside your workspace. It handles the odd jobs in plain language \u2014 and proposes every change for you to approve first.",
     },
 
     overview: {
       eyebrow: "Plain language",
-      title: "No syntax, no menu to hunt through",
-      body: "Create a booking, change the weekend rate, block a room for maintenance, record a payment that just landed. Describe it in your own words — the assistant reads the intent and stages the right action.",
+      title: "Ask it like you would ask a colleague",
+      body: "Create a booking, add a property, set a rate, record a payment \u2014 just describe it and the assistant drafts the exact change, showing its reasoning as it goes.",
       bullets: [
-        "Ask in ordinary sentences, with no commands to learn",
-        "Drafts bookings, properties, rooms, rates and payments",
-        "Answers conversationally, streaming as it goes",
-        "Lives inside the workspace, not in a separate tab",
+        "Ask in plain language",
+        "Drafts bookings, properties, rooms and payments",
+        "Conversational replies, streamed live",
+        "Sits right inside the workspace",
       ],
     },
 
     control: {
       eyebrow: "You set the rules",
-      title: "Nothing is written before you say so",
-      body: "Every proposal is a draft with a full preview attached. Approve and it applies; reject and nothing happened. You double the work you get through without handing over control of it.",
+      title: "Nothing moves until you nod",
+      body: "Every proposal comes with a full preview of what will change. Approve and it takes effect; reject and nothing happens. Double the output, all of the control.",
       bullets: [
-        "A full preview before anything is written",
-        "Drafts expire, so a stale one has to be redone",
-        "Approving re-checks the proposal against current data",
-        "Refunds and cancellations always wait for you, without exception",
+        "Proposals come with a full preview",
+        "The host approves every change",
+        "Nothing runs unsupervised",
+        "Fewer odd jobs, same control",
       ],
     },
 
     journey: {
-      eyebrow: "The life of a proposal",
-      title: "Three steps, and the decision stays where it was",
-      body: "The assistant carries the drafting. The deciding never moves.",
+      eyebrow: "How it works",
+      title: "Four steps. Complete control.",
+      body: "The assistant doubles your time without ever acting unsupervised.",
       steps: [
         {
-          title: "You ask",
-          body: "Say what needs doing in your own words. The assistant reads the current calendar and rates before proposing anything.",
+          title: "Ask",
+          body: "Say what you need in your own words \u2014 no forms, no menus to hunt through.",
         },
         {
-          title: "It drafts",
-          body: "A draft appears showing the exact lines that would change — not a description of them, the difference itself.",
+          title: "AI drafts",
+          body: "The assistant proposes the exact change to a booking, property, room or payment.",
+        },
+        {
+          title: "You review",
+          body: "A full preview of what will change, before anything is recorded.",
         },
         {
           title: "You approve",
-          body: "One click applies it. Reject and nothing happens, and the log records both who proposed and who approved.",
+          body: "One click applies it to the calendar. Reject it and nothing happens.",
         },
       ],
-      always: {
-        label: "Your call",
-        title: "Auto-approve limits",
-        body: "Set a threshold so small work runs straight through and simply reports back: blocking a night, fixing a note. Anything above it waits. You set the threshold, and you can change it whenever you like.",
-      },
     },
 
     stats: [
-      { value: "0", caption: "Exceptions", label: "Changes written without passing through you" },
-      { value: "24/7", caption: "No shift ends", label: "The assistant is always there to draft the repetitive half" },
-      { value: "100%", caption: "Visible", label: "Every proposal carries the full difference" },
+      { value: "24/7", caption: "No shift ends", label: "Ready for the odd jobs" },
+      { value: "100%", caption: "Awaiting you", label: "Of changes wait for your approval" },
+      { value: "0%", caption: "Commission", label: "Commission on direct bookings, forever" },
     ],
 
     faq: {
-      title: "Questions about the assistant",
+      title: "Assistant questions",
       items: [
         {
-          q: "Can the assistant change things on its own?",
-          a: "No, and that is an architectural constraint rather than a promise. The assistant has no tool that writes to your data — it can only create a draft. Applying it is a separate action, taken by you.",
+          q: "Does the AI change things on its own?",
+          a: "Never. The assistant only proposes changes with a full preview \u2014 nothing touches the calendar until you approve it.",
         },
         {
-          q: "Do I have to learn any commands?",
-          a: "No. Type the way you would explain it to someone new. If the request is missing something, the assistant asks rather than guessing.",
+          q: "What can it do?",
+          a: "It drafts bookings, properties, rooms and payments from a plain-language request, then hands the proposal to you to approve.",
         },
         {
-          q: "What if the calendar changes after it drafts?",
-          a: "Approving re-checks against current data. If an OTA sold that same night in the meantime, the proposal is rejected with the reason instead of quietly overwriting anything.",
+          q: "Do I have to learn special commands?",
+          a: "No. Type the way you would explain it to a colleague \u2014 the assistant reads the intent and drafts the change.",
         },
       ],
     },
 
     cta: {
-      title: "Hand over the repetitive half.",
-      body: "Keep every decision. Start free today.",
+      title: "Hand off the odd jobs.",
+      body: "You keep control of every change. Start free today.",
     },
   },
 
   channelsPage: {
     meta: {
-      title: "OTA channel sync",
+      title: "Channel sync",
       description:
-        "Two-way iCal with Airbnb, Booking.com, Agoda, Traveloka and any iCal-capable OTA. Refreshes hourly, with guards against losing your blocks.",
+        "Two-way iCal sync with Airbnb, Booking.com, Agoda, Traveloka and more \u2014 availability stays accurate everywhere, automatically.",
     },
     back: "All features",
 
     hero: {
       eyebrow: "Channel sync",
-      title: "Sell everywhere. Nothing collides.",
-      body: "Two-way iCal connections to every major OTA. A night sold anywhere blocks itself everywhere else, and you never open a channel to reconcile it by hand.",
+      title: "Every channel. No collisions.",
+      body: "Two-way iCal sync with Airbnb, Booking.com, Agoda, Traveloka and more \u2014 availability stays accurate everywhere, automatically.",
     },
 
     overview: {
-      eyebrow: "Reach",
-      title: "Connect once, every channel knows",
-      body: "Paste each channel's iCal link one time. From then on availability flows both ways — OTA bookings come to you, your blocks go out to them.",
+      eyebrow: "Distribution",
+      title: "Sell everywhere at once",
+      body: "Connect Airbnb, Booking.com, Agoda, Traveloka and any OTA with iCal. Availability flows both ways \u2014 booked on one channel, blocked instantly on the rest.",
       bullets: [
-        "iCal import and export, both directions",
-        "Airbnb, Booking.com, Agoda, Traveloka and any iCal-capable OTA",
-        "Adding a new channel takes under two minutes",
-        "Each room type gets its own stable export link",
+        "Two-way iCal import and export",
+        "Every major OTA supported",
+        "Availability accurate everywhere",
+        "Connect a new channel in minutes",
       ],
     },
 
     control: {
-      eyebrow: "No double-bookings",
-      title: "Sold once, blocked everywhere",
-      body: "Direct bookings and OTA bookings share one calendar, so they cannot land on the same night. If two channels reach for one night, the database refuses the second and tells you.",
+      eyebrow: "No double bookings",
+      title: "Booked anywhere, blocked everywhere",
+      body: "Sync runs itself every hour and mirrors out to every connected channel \u2014 a direct guest and an Airbnb guest never land on the same night.",
       bullets: [
-        "Refreshes hourly with no manual step",
-        "Overlaps blocked at the database, not in the interface",
-        "Conflicts reported with both sides named",
-        "Every sync run is logged: seen, applied, and held back",
+        "Automatic hourly sync",
+        "Changes mirrored to every channel",
+        "Direct and OTA bookings on one calendar",
+        "No more juggling availability by hand",
       ],
     },
 
     journey: {
-      eyebrow: "One sync run",
-      title: "What happens every hour",
-      body: "Additions apply immediately. Deletions do not — the two directions are not equally dangerous.",
+      eyebrow: "Why it matters",
+      title: "Reach without the manual work",
       steps: [
         {
-          title: "Fetch",
-          body: "Pull each channel's feed. A network failure or an error page in place of a feed ends the run, leaving existing blocks untouched.",
+          title: "Reach",
+          body: "Be on every channel your guests search, from one place.",
         },
         {
-          title: "Reconcile",
-          body: "Each event is matched on its own identifier. New nights become new blocks; a stay whose dates moved is updated in place.",
+          title: "Always current",
+          body: "Hourly sync keeps availability accurate without you lifting a finger.",
         },
         {
-          title: "Record",
-          body: "The run is logged with how many events were seen, applied and held back — so \"where did my block go\" always has an answer.",
+          title: "Two-way",
+          body: "Bookings flow both directions \u2014 import from OTAs, export your blocks.",
+        },
+        {
+          title: "No collisions",
+          body: "One shared calendar means a night is never sold twice.",
         },
       ],
-      always: {
-        label: "The guard",
-        title: "Deleting is the dangerous direction",
-        body: "Adding a block by mistake costs you one booking. Removing one by mistake sells a room that already has a guest in it. So a feed that suddenly comes back empty, or a run that would remove an implausible share of your blocks, is held for you to look at rather than carried out.",
-      },
     },
 
     stats: [
-      { value: "60′", caption: "Cycle", label: "Every connected channel refreshed each hour" },
-      { value: "2", caption: "Directions", label: "Bookings in, blocks out — on one connection" },
-      { value: "0", caption: "The target", label: "Nights sold twice across connected channels" },
+      { value: "60\u2032", caption: "Every hour", label: "Automatic two-way sync" },
+      { value: "2", caption: "Both ways", label: "Bookings in, blocks out \u2014 one connection" },
+      { value: "0", caption: "Collisions", label: "Double bookings" },
     ],
 
     faq: {
-      title: "Questions about channel sync",
+      title: "Channel sync questions",
       items: [
         {
+          q: "How does sync work?",
+          a: "TLSHost connects each channel's iCal and syncs availability both ways \u2014 importing OTA bookings, exporting your blocks \u2014 automatically, every hour.",
+        },
+        {
           q: "Which channels can I connect?",
-          a: "Any OTA that supports iCal, including Airbnb, Booking.com, Agoda, Traveloka, Expedia and VRBO. No partner approval to wait for.",
+          a: "Any OTA with iCal, including Airbnb, Booking.com, Agoda and Traveloka.",
         },
         {
-          q: "Does sync push rates to the OTAs?",
-          a: "No. iCal carries only whether a night is taken — not rates, not guest names. Pushing rates needs each brand's partner API, each with its own approval process, and that is outside the current scope.",
-        },
-        {
-          q: "What happens if a channel goes down?",
-          a: "That run stops and backs off, leaving your existing blocks alone. After five consecutive failures you get an email — a channel failing silently is worse than one that says so.",
+          q: "Does it stop double bookings?",
+          a: "Yes. Every channel and your direct bookings share one calendar, so a night booked anywhere is blocked everywhere on the next sync.",
         },
       ],
     },
 
     cta: {
-      title: "Turn sync on, then forget it.",
-      body: "Connect your channels and stop reconciling by hand.",
+      title: "Turn on sync. Then forget it.",
+      body: "Connect your OTAs and end double bookings for good.",
     },
   },
 
@@ -655,92 +652,86 @@ const en: Dictionary = {
     meta: {
       title: "Direct booking page",
       description:
-        "Every property gets a branded booking page on its own link. Guests book directly, get confirmed instantly, and no commission is taken.",
+        "Every property gets a guest-facing booking page on your own link. Direct bookings, no commission, straight onto the same calendar.",
     },
     back: "All features",
 
     hero: {
-      eyebrow: "Direct booking",
-      title: "Your storefront. Your revenue.",
-      body: "A booking page on your own link, one per property. Guests pick dates, book, and are confirmed on the spot. Bookings land in the same calendar as your OTA ones — and nobody takes a percentage.",
+      eyebrow: "Direct booking page",
+      title: "Your storefront. 100% yours.",
+      body: "Every property gets a guest-facing booking page on your own link. Direct bookings, no commission, straight onto the same calendar.",
     },
 
     overview: {
       eyebrow: "Your storefront",
-      title: "One link you can share anywhere",
-      body: "Put it in a bio, send it in a message, attach it to an ad, print it on the card in the room. Guests see real availability and book right there, with no OTA in between.",
+      title: "A booking page on your own link",
+      body: "Share it anywhere you meet guests \u2014 a bio, a message, an ad. Guests see availability and book direct, with no OTA in between.",
       bullets: [
-        "A page carrying your property's name and images",
-        "A public link for each individual property",
-        "Availability read live from your calendar, never a copy",
-        "Confirmation sent to the guest the moment they book",
+        "A booking page carrying your brand",
+        "A public link per property",
+        "Share it anywhere you meet guests",
+        "Direct bookings land straight on the calendar",
       ],
     },
 
     control: {
-      eyebrow: "Revenue you keep",
-      title: "Cut the commission, keep the relationship",
-      body: "A direct booking is a relationship you own from the first click to checkout. The guest's email is yours, so the next time they come back they come straight to you.",
+      eyebrow: "Own the customer",
+      title: "Cut the commission, keep the guest",
+      body: "A direct booking is a relationship you own from the first click to check-out \u2014 and revenue you keep whole. No per-booking fee, ever.",
       bullets: [
-        "0% commission per booking, on every plan",
-        "A flat subscription, with no hidden per-booking fee",
-        "Guest details belong to you, not to a channel",
-        "Direct and OTA bookings share one calendar",
+        "No commission on any booking",
+        "Keep 100% of direct revenue",
+        "Own the guest from click to check-out",
+        "Bookings sit on the same calendar",
       ],
     },
 
     journey: {
-      eyebrow: "From link to booking",
-      title: "Three steps, nobody in between",
-      body: "No account for the guest to create, no app to install, no channel to route through.",
+      eyebrow: "Why direct wins",
+      title: "The revenue and the guest \u2014 both yours",
       steps: [
         {
-          title: "They open the link",
-          body: "The page shows real availability from your calendar, with the right rate for the dates they pick.",
+          title: "Keep the revenue",
+          body: "Nobody skims a percentage \u2014 every direct booking pays you in full.",
         },
         {
-          title: "They book",
-          body: "Choose dates, fill in details, confirm. No account, and no step standing between intent and booking.",
+          title: "Own the relationship",
+          body: "The guest is yours, from the first click to the day they check out.",
         },
         {
-          title: "It lands",
-          body: "The booking appears on your board immediately and blocks that night across every connected channel on the next sync.",
+          title: "One calendar",
+          body: "Direct bookings land on the same board as your OTA bookings.",
         },
       ],
-      always: {
-        label: "Worth saying",
-        title: "Direct does not replace the OTAs",
-        body: "The OTAs are still where new guests find you, and that is worth the commission. The direct page is for the other group: returning guests, referrals, people who found you on social. Paying commission on those is money given away.",
-      },
     },
 
     stats: [
-      { value: "0%", caption: "Forever", label: "Commission on direct bookings, on every plan" },
-      { value: "1", caption: "Shared calendar", label: "For direct and OTA bookings alike" },
-      { value: "100%", caption: "Yours", label: "Revenue and guest details from a direct booking" },
+      { value: "0%", caption: "Forever", label: "Commission on direct bookings, forever" },
+      { value: "100%", caption: "Yours", label: "Of direct revenue is yours" },
+      { value: "1", caption: "Shared calendar", label: "Calendar for both direct and OTA bookings" },
     ],
 
     faq: {
-      title: "Questions about direct booking",
+      title: "Direct booking questions",
       items: [
         {
-          q: "I already sell on Airbnb — why do I need my own page?",
-          a: "The OTAs bring new guests, but they keep a percentage and they keep the relationship. Your own page is where you take the bookings that were already yours: returning guests, referrals, people who follow you on social.",
+          q: "I already have Airbnb \u2014 why do I need direct booking?",
+          a: "OTAs bring guests, but they take a percentage of every booking and own the guest relationship. A direct booking page lets you keep 100% of the revenue and build your own guest list.",
         },
         {
           q: "Where do direct bookings go?",
-          a: "Straight into the same calendar as your OTA bookings. That night is blocked across every connected channel, so there is nothing to double-book.",
+          a: "Straight onto the same calendar as your OTA bookings, so availability stays accurate everywhere and nothing double-books.",
         },
         {
-          q: "How do guests pay?",
-          a: "In this version the page collects the booking and sends payment instructions in the confirmation email; you record the money when it arrives. An online payment gateway is planned, not shipped.",
+          q: "Is it really no commission?",
+          a: "Yes \u2014 absolutely. TLSHost is a flat subscription. There is no per-booking fee on direct bookings, on any plan.",
         },
       ],
     },
 
     cta: {
-      title: "Keep all of the next booking.",
-      body: "Open your booking page and stop paying commission on guests who were already yours.",
+      title: "Keep your next booking whole.",
+      body: "Open your page and keep every dong of the next booking.",
     },
   },
 
@@ -748,92 +739,91 @@ const en: Dictionary = {
     meta: {
       title: "Housekeeping",
       description:
-        "Every checkout becomes a cleaning task. Staff see it on their phone, mark clean in one tap, and the host follows progress on the calendar.",
+        "Check-outs turn into cleaning jobs automatically. Your housekeepers see what needs doing on any phone \u2014 and you follow it live on the board.",
     },
     back: "All features",
 
     hero: {
       eyebrow: "Housekeeping",
-      title: "Guest leaves, room goes to work.",
-      body: "No group chat, no paper list, nobody having to remember. A checkout creates the cleaning task, the task reaches the right person, and the board updates the moment the room is done.",
+      title: "Every turnover, spotless.",
+      body: "Check-outs turn into cleaning jobs automatically. Your housekeepers see what needs doing on any phone \u2014 and you follow it live on the board.",
     },
 
     overview: {
-      eyebrow: "For the cleaning team",
-      title: "Open the phone, see your own work",
-      body: "Staff log in and see exactly the rooms assigned to them — which guest has just left, which is a same-day turnover, which one has a guest staying on.",
+      eyebrow: "For the housekeeping team",
+      title: "Open the phone, see the work",
+      body: "No group chat, no paperwork. Staff log in and see exactly the rooms assigned to them \u2014 which just checked out, which is a turnover and which needs doing first.",
       bullets: [
-        "Rooms flip to needs-cleaning the moment a guest checks out",
-        "With the context: checkout, turnover, or staying on",
-        "One tap to mark clean, visible to the team instantly",
-        "Only assigned rooms — no rates, no guest payment details",
+        "Rooms flip to \u201cDirty\u201d the moment a guest checks out",
+        "Front-desk context: check-out, turnover or stayover",
+        "One-tap Mark clean on any phone",
+        "Staff only see the properties you assign",
       ],
     },
 
     control: {
-      eyebrow: "For hosts and managers",
-      title: "Cleaning progress without asking anyone",
-      body: "A checklist built around today: what is finished, what is in progress, what needs attention — set beside the day's arrivals and departures.",
+      eyebrow: "For hosts & managers",
+      title: "Cleaning progress, live",
+      body: "The inspection board shows every room's status next to today's arrivals and departures. Mark a room inspected, flag maintenance, or mark everything clean at once.",
       bullets: [
-        "A checklist covering every room for the day",
-        "States: clean, needs cleaning, inspected, under maintenance",
-        "Status shown on the room's own cell in the calendar",
-        "Flag maintenance so a room cannot be sold",
+        "An inspection board across every room",
+        "Status: clean, dirty, inspected, maintenance",
+        "Housekeeping state right on the calendar",
+        "Mark everything clean in one click",
       ],
     },
 
     journey: {
-      eyebrow: "Checkout to check-in",
-      title: "One turnaround, unbroken",
-      body: "Each room runs the full cycle without anyone tracking it from memory.",
+      eyebrow: "From check-out to check-in",
+      title: "Turnovers, in order",
+      body: "TLSHost walks each room through the cleaning cycle so the next guest never waits.",
       steps: [
         {
-          title: "Checkout",
-          body: "The guest leaves, the room flips to needs-cleaning and appears on the assigned person's list.",
+          title: "Check-out",
+          body: "The guest leaves and the room flips to dirty \u2014 nobody has to remember.",
         },
         {
-          title: "Clean",
-          body: "Staff finish and tap once to mark it clean. The board and the checklist change there and then.",
+          title: "Assigned",
+          body: "The room appears in a housekeeper's list, with front-desk context attached.",
         },
         {
-          title: "Inspect",
-          body: "A manager confirms and the room moves to ready. The next arrival is never a gamble.",
+          title: "Cleaned",
+          body: "One tap marks it clean. The board and the whole team update instantly.",
+        },
+        {
+          title: "Inspected",
+          body: "A manager confirms with an inspected mark \u2014 ready for the next check-in.",
         },
       ],
-      always: {
-        label: "On the phone",
-        title: "Nothing to install",
-        body: "The housekeeping view runs in a phone browser and can be added to the home screen like an app. No app store, no updates, and no device left behind for being too old.",
-      },
     },
 
     stats: [
-      { value: "1", caption: "Action", label: "Taps to report a room as clean" },
-      { value: "0", caption: "Retired", label: "Paper lists and group chats left to maintain" },
-      { value: "100%", caption: "Automatic", label: "Checkouts that become a cleaning task on their own" },
+      { value: "1", caption: "Action", label: "Tap to mark a room clean" },
+      { value: "0", caption: "Dropped", label: "Paper lists or group chats" },
+      { value: "100%", caption: "Automatic", label: "Of check-outs become cleaning jobs" },
     ],
 
     faq: {
-      title: "Questions about housekeeping",
+      title: "Housekeeping questions",
       items: [
         {
-          q: "Does the team need to install an app?",
-          a: "No. It runs in a phone browser and can be added to the home screen. An old Android or an early iPhone handles it fine.",
+          q: "Do staff need to install an app?",
+          a: "No. The housekeeping view runs in a phone browser and installs to the home screen like an app \u2014 no app store required.",
         },
         {
-          q: "What can housekeeping staff see?",
-          a: "Only the properties and rooms you assign, with today's work. They do not see rates, revenue, or guest payment details.",
+          q: "What do housekeepers see?",
+          a: "Only the properties and rooms assigned to them: which need cleaning, which are turnovers today, and a Mark clean button. No rates and no guest payment details.",
         },
         {
-          q: "What if several people share one phone?",
-          a: "That is the most common case in practice. The device signs in once for the property, and each person has their own code so the record still shows who did what.",
+          q: "How does a room turn dirty?",
+          a: "Automatically at check-out. You can also flag a room dirty or under maintenance yourself, from the calendar or the housekeeping board.",
         },
       ],
     },
 
     cta: {
-      title: "Give the cleaning team a list that is right.",
-      body: "Set it up in minutes. Included on every plan.",
+      title: "Give your housekeeping team superpowers",
+      body: "Set up housekeeping in minutes \u2014 included on every TLSHost plan.",
     },
   },
 
@@ -841,92 +831,87 @@ const en: Dictionary = {
     meta: {
       title: "Team & permissions",
       description:
-        "Give each collaborator the properties they are responsible for, decide who may edit whose bookings, and know who created every record.",
+        "Give each collaborator exactly the properties they are responsible for, control who can edit whose bookings \u2014 and see who created each one.",
     },
     back: "All features",
 
     hero: {
       eyebrow: "Team & permissions",
-      title: "Hand out the work, not your password.",
-      body: "One account per person, one scope per account. Collaborators see the work assigned to them, and every record carries the name of whoever made it.",
+      title: "Clear access. Clear accountability.",
+      body: "Give each collaborator exactly the properties they are responsible for, control who can edit whose bookings \u2014 and see who created each one.",
     },
 
     overview: {
-      eyebrow: "Scope",
-      title: "Everyone sees their own part",
-      body: "Invite someone and give them exactly the properties and room types they are responsible for — no more. Whoever runs An Bang has no need to see Hoi An.",
+      eyebrow: "Scoped permissions",
+      title: "Everyone sees only their own part",
+      body: "Invite collaborators and give each one exactly the properties and room types they are responsible for \u2014 no more. The right person over the right rooms.",
       bullets: [
-        "Access scoped per property and per room type",
-        "A collaborator portal showing only the assigned scope",
-        "Invite by email; they set their own password",
-        "An interface trimmed to the role, without what they never use",
+        "Per-person property & room-type permissions",
+        "A separate collaborator portal, scoped to what they see",
+        "Invite a collaborator in a few clicks",
+        "An interface trimmed to the role",
       ],
     },
 
     control: {
-      eyebrow: "Accountability",
-      title: "Know who did what, and when",
-      body: "You decide who may edit whose bookings. Every change leaves a trace, so when something does not add up, \"who did this\" always has an answer.",
+      eyebrow: "Transparency",
+      title: "Know who did what",
+      body: "Decide who can edit whose bookings, and see exactly who created each one. The bigger the team, the more control and accountability grow with it.",
       bullets: [
-        "Turn editing of other people's bookings on or off",
-        "Every booking records who created it",
-        "The log keeps actor, action and timestamp",
-        "AI proposals record the approver as well",
+        "Permission to manage other people's bookings",
+        "Booking creator tracking",
+        "Clear accountability across the team",
+        "Control that grows with your portfolio",
       ],
     },
 
     journey: {
-      eyebrow: "Adding someone",
-      title: "Three steps and they are working",
-      body: "From deciding to delegate to them starting work, no step needs you again.",
+      eyebrow: "From solo to serious scale",
+      title: "Permissions that grow with your team",
+      body: "Start on your own and add collaborators as the portfolio grows \u2014 without ever changing tools.",
       steps: [
         {
-          title: "Invite",
-          body: "Enter an email and pick a role. The invitation goes out and they set their own password.",
+          title: "Right now, just you",
+          body: "Run everything yourself today \u2014 and invite help the moment you are ready, without changing tools.",
         },
         {
-          title: "Assign scope",
-          body: "Tick the properties and room types they cover. Scope takes effect at once, with no need for them to sign in again.",
+          title: "Permissions for a growing team",
+          body: "Give each collaborator exactly the properties they manage, and track who created each booking.",
         },
         {
-          title: "Follow along",
-          body: "From then on their actions appear in the log, attached to their name and the time.",
+          title: "Fine-grained control at scale",
+          body: "Run a large portfolio with permissions and accountability that hold across many properties and many collaborators.",
         },
       ],
-      always: {
-        label: "Grows with you",
-        title: "Starting alone is fine",
-        body: "Most hosts start with a single account and never open this section. It is here for the day you hire your first person — no tool to change, no data to move.",
-      },
     },
 
     stats: [
-      { value: "1:1", caption: "Per person", label: "Its own scope across properties and room types" },
-      { value: "100%", caption: "Traceable", label: "Records carrying the name of who made them" },
-      { value: "0", caption: "Shared", label: "Passwords that have to pass between people" },
+      { value: "1:1", caption: "Per person", label: "Property & room-type permissions" },
+      { value: "100%", caption: "Traceable", label: "Of bookings show who created them" },
+      { value: "24/7", caption: "Assistant", label: "AI assistant ready for the odd jobs" },
     ],
 
     faq: {
-      title: "Questions about team & permissions",
+      title: "Team & permissions questions",
       items: [
         {
           q: "Can I limit what a collaborator sees?",
-          a: "Yes, down to the property and the room type. They sign in to a separate portal showing only their assigned scope, apart from your workspace.",
+          a: "Yes. Each collaborator sees only the properties and room types they are responsible for, through a separate portal scoped to exactly that.",
         },
         {
           q: "Can collaborators edit each other's bookings?",
-          a: "Only if you allow it. It is a per-person switch, off by default. Either way, every booking still records who created it.",
+          a: "Only if you allow it. You control who can manage other people's bookings, and every booking records who created it.",
         },
         {
-          q: "Is there a limit on team members?",
-          a: "Members and permissions are on the Professional plan, with no cap on how many people. Lower plans use a single owner account.",
+          q: "Is there a separate collaborator portal?",
+          a: "Yes \u2014 collaborators sign in to their own portal, scoped to what they can see, separate from the host workspace.",
         },
       ],
     },
 
     cta: {
-      title: "Get the team onto one system.",
-      body: "Scoped per person, traceable per record. Start free.",
+      title: "Get the whole team on board.",
+      body: "Permissions per person, tracking per booking. Start free today.",
     },
   },
 
