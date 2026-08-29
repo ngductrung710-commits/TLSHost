@@ -8,7 +8,7 @@ import Image from "next/image";
  *
  * The mark is the artwork file rather than a drawn approximation of it. Its
  * plate is #311817 — exactly ink-800, because the logo was designed against
- * this palette — so the square frame behind it can crop the 52×50 source
+ * this palette — so the square frame behind it can crop the 45×47 source
  * without a seam.
  */
 export function Wordmark({ className = "" }: { className?: string }) {
@@ -18,8 +18,8 @@ export function Wordmark({ className = "" }: { className?: string }) {
         <Image
           src="/logo.png"
           alt=""
-          width={52}
-          height={50}
+          width={45}
+          height={47}
           className="size-full object-cover"
         />
       </span>
