@@ -23,8 +23,14 @@ export function Wordmark({ className = "" }: { className?: string }) {
           className="size-full object-cover"
         />
       </span>
-      <span className="font-[family-name:var(--font-display)] text-[19px] leading-none tracking-tight">
-        TLSHost
+      {/* Sans, not the display serif: two weights of one family carry the
+          split between the two halves of the name, so the mark reads the same
+          at 19px in a header as it does scaled down in a favicon. Be Vietnam
+          Pro draws both weights with the same Vietnamese diacritics as the
+          rest of the site, which the serif did not have to. */}
+      <span className="font-[family-name:var(--font-sans)] text-[19px] leading-none tracking-tight">
+        <span className="font-bold">TLS</span>
+        <span className="font-normal">Host</span>
       </span>
     </span>
   );
