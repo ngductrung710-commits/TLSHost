@@ -12,7 +12,7 @@ import type { Dictionary } from "@/i18n/dictionaries/vi";
  * JavaScript of its own.
  */
 /**
- * Channels whose artwork is a mark rather than a wordmark.
+ * Channels whose artwork is not a single-line wordmark.
  *
  * Sized by height, a wordmark six times wider than it is tall ends up with six
  * times the ink of a square mark beside it — Booking.com came out 138px wide
@@ -20,16 +20,22 @@ import type { Dictionary } from "@/i18n/dictionaries/vi";
  * of specks. Marks therefore get more height, which is how logo walls have
  * always squared this: match the optical weight, not the measurement.
  *
+ * Two shapes qualify, for the same reason:
+ *
+ *   Trip.com — a square mark, 1:1.
+ *   Agoda    — a stacked lockup, the wordmark sitting over five dots, 1.98:1.
+ *              At a wordmark's height the word itself gets twelve pixels.
+ *
  * Airbnb left this set when its artwork was swapped for the horizontal lockup:
  * the bélo with "airbnb" beside it is 3.2:1, a wordmark by any measure, and
- * giving it the mark treatment would have made it the largest thing on the
+ * giving it this treatment would have made it the largest thing on the
  * strip.
  *
  * A list rather than something derived from the file, because whether a piece
  * of artwork reads as a mark or a wordmark is a judgement about the artwork,
  * not a number in it. One line when a new logo arrives.
  */
-const COMPACT_MARKS = new Set(["Trip.com"]);
+const COMPACT_MARKS = new Set(["Trip.com", "Agoda"]);
 
 export function ChannelMarquee({
   t,
