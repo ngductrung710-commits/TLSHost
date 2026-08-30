@@ -357,6 +357,13 @@
   display: block;
 }
 
+/* A square mark at a wordmark's height carries a fraction of its ink. 1.45x
+   is what brings an Airbnb bélo level with "Booking.com" beside it — the same
+   correction a designer makes by eye on a logo wall. */
+.marquee__logo--mark {
+  height: clamp(32px, 4.6vw, 43px);
+}
+
 /* --- Rotating headline ----------------------------------------------------
    Every word occupies the same single grid cell, so the frame is as wide as
    the longest of them and the text after it never moves. Short words leave a

@@ -11,6 +11,21 @@ import type { Dictionary } from "@/i18n/dictionaries/vi";
  * No state and no handlers, so this stays a server component and ships no
  * JavaScript of its own.
  */
+/**
+ * Channels whose artwork is a mark rather than a wordmark.
+ *
+ * Sized by height, a wordmark six times wider than it is tall ends up with six
+ * times the ink of a square mark beside it — Booking.com came out 138px wide
+ * next to an Airbnb bélo at 20px, and the strip read as one big logo and a row
+ * of specks. Marks therefore get more height, which is how logo walls have
+ * always squared this: match the optical weight, not the measurement.
+ *
+ * A list rather than something derived from the file, because whether a piece
+ * of artwork reads as a mark or a wordmark is a judgement about the artwork,
+ * not a number in it. One line when a new logo arrives.
+ */
+const COMPACT_MARKS = new Set(["Airbnb", "Trip.com"]);
+
 export function ChannelMarquee({
   t,
   logos = {},
@@ -30,7 +45,7 @@ export function ChannelMarquee({
       <img
         src={logos[name]}
         alt={name}
-        className="marquee__logo"
+        className={`marquee__logo${COMPACT_MARKS.has(name) ? " marquee__logo--mark" : ""}`}
         loading="lazy"
         decoding="async"
       />
