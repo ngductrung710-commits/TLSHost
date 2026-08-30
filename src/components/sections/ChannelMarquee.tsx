@@ -20,22 +20,24 @@ import type { Dictionary } from "@/i18n/dictionaries/vi";
  * of specks. Marks therefore get more height, which is how logo walls have
  * always squared this: match the optical weight, not the measurement.
  *
- * Two shapes qualify, for the same reason:
+ * Only Agoda qualifies now: its artwork is a stacked lockup, the wordmark
+ * sitting over five coloured dots, 1.98:1. At a wordmark's height the word
+ * itself gets about twelve pixels.
  *
- *   Trip.com — a square mark, 1:1.
- *   Agoda    — a stacked lockup, the wordmark sitting over five dots, 1.98:1.
- *              At a wordmark's height the word itself gets twelve pixels.
+ * Two channels have left this set, both because the artwork changed rather
+ * than the rule:
  *
- * Airbnb left this set when its artwork was swapped for the horizontal lockup:
- * the bélo with "airbnb" beside it is 3.2:1, a wordmark by any measure, and
- * giving it this treatment would have made it the largest thing on the
- * strip.
+ *   Airbnb   — swapped for the horizontal lockup, 3.2:1.
+ *   Trip.com — looked square at 1:1, but that was 600x600 of file around a
+ *              540x130 wordmark. Cropped, it is 3.8:1. The lesson is that the
+ *              file's aspect ratio is not the artwork's, and this set is about
+ *              the artwork.
  *
  * A list rather than something derived from the file, because whether a piece
  * of artwork reads as a mark or a wordmark is a judgement about the artwork,
  * not a number in it. One line when a new logo arrives.
  */
-const COMPACT_MARKS = new Set(["Trip.com", "Agoda"]);
+const COMPACT_MARKS = new Set(["Agoda"]);
 
 export function ChannelMarquee({
   t,
