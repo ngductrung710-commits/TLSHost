@@ -20,11 +20,16 @@ import type { Dictionary } from "@/i18n/dictionaries/vi";
  * of specks. Marks therefore get more height, which is how logo walls have
  * always squared this: match the optical weight, not the measurement.
  *
+ * Airbnb left this set when its artwork was swapped for the horizontal lockup:
+ * the bélo with "airbnb" beside it is 3.2:1, a wordmark by any measure, and
+ * giving it the mark treatment would have made it the largest thing on the
+ * strip.
+ *
  * A list rather than something derived from the file, because whether a piece
  * of artwork reads as a mark or a wordmark is a judgement about the artwork,
  * not a number in it. One line when a new logo arrives.
  */
-const COMPACT_MARKS = new Set(["Airbnb", "Trip.com"]);
+const COMPACT_MARKS = new Set(["Trip.com"]);
 
 export function ChannelMarquee({
   t,
