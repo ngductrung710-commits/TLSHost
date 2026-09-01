@@ -943,7 +943,7 @@ const en: Dictionary = {
         tagline: "For hosts selling across several OTAs at once.",
         price: "₫290k",
         cadence: "month",
-        cta: "Try 14 days free",
+        cta: "Create an account",
         popular: true,
         features: [
           "Everything in Free",
@@ -958,7 +958,7 @@ const en: Dictionary = {
         tagline: "For teams operating a portfolio at scale.",
         price: "₫690k",
         cadence: "month",
-        cta: "Talk to us",
+        cta: "Create an account",
         popular: false,
         features: [
           "Everything in Channel Manager",

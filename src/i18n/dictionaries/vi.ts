@@ -964,7 +964,7 @@ const vi = {
         tagline: "Cho chủ nhà đang bán trên nhiều OTA cùng lúc.",
         price: "₫290k",
         cadence: "month",
-        cta: "Dùng thử 14 ngày",
+        cta: "Tạo tài khoản",
         popular: true,
         features: [
           "Mọi thứ trong gói Miễn phí",
@@ -979,7 +979,7 @@ const vi = {
         tagline: "Cho đội ngũ vận hành danh mục ở quy mô lớn.",
         price: "₫690k",
         cadence: "month",
-        cta: "Trao đổi với chúng tôi",
+        cta: "Tạo tài khoản",
         popular: false,
         features: [
           "Mọi thứ trong gói Channel Manager",
