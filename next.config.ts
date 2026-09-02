@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /**
+   * Same as the workspace app: a server that carries only what it imports.
+   * See tlshost-app/next.config.ts for what this costs, and DEPLOY.md for the
+   * two directories it will not copy for you.
+   */
+  output: "standalone",
+
   // The root layout lives under /[lang], so send bare "/" to the default locale.
   async redirects() {
     return [
