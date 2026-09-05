@@ -337,6 +337,10 @@
     padding-right: clamp(2.5rem, 6vw, 5rem);
     margin: 0;
     list-style: none;
+    /* Not one of the --dur-* tokens, and deliberately so. Those are how long
+       a thing takes to change state; this is how fast a strip travels across
+       a distance. Tying it to them would make the logos speed up because a
+       button's hover got snappier. */
     animation: marqueeScroll 34s linear infinite;
     will-change: transform;
   }
@@ -348,7 +352,7 @@
     font-weight: 600;
     letter-spacing: -0.015em;
     color: var(--color-ink-400);
-    transition: color 0.3s var(--ease-out-soft);
+    transition: color var(--dur-quick) var(--ease-out-soft);
   }
 
   .marquee:hover .marquee__item {
@@ -415,7 +419,12 @@
 
   /* Leaving: quick. Two words at half opacity in the same place are unreadable
      mush, so the outgoing one clears in a fraction of the time the incoming one
-     takes to arrive, and they barely overlap. */
+     takes to arrive, and they barely overlap.
+
+     Both derived from --dur-base rather than written as their own numbers.
+     What matters here is the ratio, not the milliseconds: the pair was tuned
+     together, and a later change to the base duration that moved only the
+     arriving word would put the two of them on screen at once. */
   .rotator__word {
     grid-area: 1 / 1;
     white-space: nowrap;
@@ -423,8 +432,8 @@
     opacity: 0;
     transform: translateY(-0.3em);
     transition:
-      opacity 0.16s ease-in,
-      transform 0.16s ease-in;
+      opacity calc(var(--dur-base) * 0.4) ease-in,
+      transform calc(var(--dur-base) * 0.4) ease-in;
   }
 
   /* Arriving: slower, and held back until the outgoing word has almost gone. */
@@ -432,8 +441,8 @@
     opacity: 1;
     transform: none;
     transition:
-      opacity 0.4s var(--ease-out-soft) 0.13s,
-      transform 0.4s var(--ease-out-soft) 0.13s;
+      opacity var(--dur-base) var(--ease-out-soft) calc(var(--dur-base) * 0.32),
+      transform var(--dur-base) var(--ease-out-soft) calc(var(--dur-base) * 0.32);
   }
 }
 
