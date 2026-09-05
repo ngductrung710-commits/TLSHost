@@ -1,4 +1,5 @@
 import { MockFrame } from "@/components/mockups/MockFrame";
+import { Scenario, Step } from "@/components/mockups/Scenario";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
 
 type Stay = {
@@ -23,6 +24,23 @@ const ROWS: Stay[][] = [
   [{ start: 2, span: 4, guest: "Bao Nguyen", tone: "direct" }],
 ];
 
+/**
+ * The nights filling in, one stay at a time.
+ *
+ * Six beats because there are six stays, and they land in reading order —
+ * left to right, top to bottom — so the grid reads as a month closing up
+ * rather than as six things appearing at random. Fast, 140ms apart: this is
+ * the establishing shot for the section beside it, not the section itself.
+ */
+const BEATS = [320, 460, 600, 740, 880, 1020] as const;
+
+/** Flat position of a stay across all rows, so each gets its own beat. */
+function beatIndex(rows: Stay[][], rowIndex: number, stayIndex: number): number {
+  let n = 0;
+  for (let r = 0; r < rowIndex; r++) n += rows[r]?.length ?? 0;
+  return n + stayIndex;
+}
+
 const toneStyles = {
   ota: "bg-ink-800 text-sand-100",
   direct: "bg-clay-500 text-white",
@@ -42,7 +60,7 @@ export function CalendarMock({ t }: { t: Dictionary }) {
         </span>
       }
     >
-      <div className="p-3 sm:p-4">
+      <Scenario steps={BEATS} className="p-3 sm:p-4">
         {/* Day header */}
         <div className="grid grid-cols-[88px_repeat(7,1fr)] gap-1 sm:grid-cols-[130px_repeat(7,1fr)]">
           <div />
@@ -77,17 +95,24 @@ export function CalendarMock({ t }: { t: Dictionary }) {
 
               {/* Stays are overlaid on their own grid so they can span columns */}
               <div className="col-start-2 col-end-9 row-start-1 grid grid-cols-7 gap-1">
-                {ROWS[rowIndex]?.map((stay) => (
-                  <div
+                {ROWS[rowIndex]?.map((stay, stayIndex) => (
+                  // The Step is the grid item, so the column span belongs to
+                  // it — wrapping the stay in an unpositioned div would drop
+                  // every booking into column one.
+                  <Step
                     key={`${stay.guest}-${stay.start}`}
+                    index={beatIndex(ROWS, rowIndex, stayIndex)}
                     style={{
                       gridColumnStart: stay.start + 1,
                       gridColumnEnd: `span ${stay.span}`,
                     }}
-                    className={`flex h-9 items-center overflow-hidden rounded-md px-2 text-[11px] font-medium ${toneStyles[stay.tone]}`}
                   >
-                    <span className="truncate">{stay.guest}</span>
-                  </div>
+                    <div
+                      className={`flex h-9 items-center overflow-hidden rounded-md px-2 text-[11px] font-medium ${toneStyles[stay.tone]}`}
+                    >
+                      <span className="truncate">{stay.guest}</span>
+                    </div>
+                  </Step>
                 ))}
               </div>
             </div>
@@ -109,7 +134,7 @@ export function CalendarMock({ t }: { t: Dictionary }) {
             {m.blocked}
           </span>
         </div>
-      </div>
+      </Scenario>
     </MockFrame>
   );
 }

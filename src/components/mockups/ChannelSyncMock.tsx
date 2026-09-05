@@ -1,4 +1,5 @@
 import { MockFrame } from "@/components/mockups/MockFrame";
+import { Scenario, Step } from "@/components/mockups/Scenario";
 import type { Dictionary } from "@/i18n/dictionaries/vi";
 
 const CHANNELS = [
@@ -7,6 +8,19 @@ const CHANNELS = [
   { name: "Agoda", properties: 3, minutes: 5, hue: "#5A2D82" },
   { name: "Traveloka", properties: 2, minutes: 6, hue: "#1B9CE5" },
 ];
+
+/**
+ * One price change reaching every channel.
+ *
+ * The claim this section makes is that a host changes a rate once and four
+ * OTAs agree within minutes. Four channel rows land in turn, and the new
+ * price lands last — the order is the argument, because a footer that arrives
+ * before the channels would read as a price the channels have not heard yet.
+ *
+ * Slower than the calendar on purpose. The calendar is a backdrop; this is
+ * the thing the reader is being asked to believe.
+ */
+const BEATS = [300, 640, 980, 1320, 1900] as const;
 
 export function ChannelSyncMock({ t }: { t: Dictionary }) {
   const m = t.mock.channels;
@@ -32,9 +46,10 @@ export function ChannelSyncMock({ t }: { t: Dictionary }) {
         </span>
       }
     >
+      <Scenario steps={BEATS}>
       <div className="divide-y divide-line">
         {CHANNELS.map((channel, i) => (
-          <div key={channel.name} className="flex items-center gap-3 px-4 py-3">
+          <Step key={channel.name} index={i} className="flex items-center gap-3 px-4 py-3">
             <span
               className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[11px] font-bold text-white"
               style={{ backgroundColor: channel.hue }}
@@ -70,14 +85,15 @@ export function ChannelSyncMock({ t }: { t: Dictionary }) {
               </svg>
               {m.justSynced}
             </span>
-          </div>
+          </Step>
         ))}
       </div>
 
-      <div className="flex items-center justify-between gap-3 border-t border-line bg-sand-50 px-4 py-3">
+      <Step index={4} className="flex items-center justify-between gap-3 border-t border-line bg-sand-50 px-4 py-3">
         <p className="text-[11px] text-ink-500">{m.priceUpdated}</p>
         <p className="text-[12.5px] font-semibold text-ink-900 tnum">1.400.000 ₫</p>
-      </div>
+      </Step>
+      </Scenario>
     </MockFrame>
   );
 }

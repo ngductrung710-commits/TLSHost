@@ -149,16 +149,24 @@ export function Step({
   index,
   children,
   className = "",
+  style,
 }: {
   index: number;
   children: ReactNode;
   className?: string;
+  /**
+   * For a step that is itself a grid item. The wrapper becomes the child of
+   * the grid, so anything positioning it — a stay spanning four nights on a
+   * calendar — has to be set here rather than on what it wraps.
+   */
+  style?: React.CSSProperties;
 }) {
   const { shown } = use(ScenarioContext);
   return (
     <div
       className={`scenario-step ${className}`}
       data-shown={index < shown ? "true" : "false"}
+      style={style}
     >
       {children}
     </div>
