@@ -152,6 +152,22 @@
       opacity: 1;
       transform: none;
     }
+
+    /* One beat of a mockup that plays out — see components/mockups/Scenario.
+       Same `scripting: enabled` guard and the same reason: a step is hidden
+       only where something can be trusted to reveal it. The space it will
+       occupy is held from the start, so a scene filling in never pushes the
+       paragraph beside it down the page. */
+    .scenario-step[data-shown="false"] {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    .scenario-step {
+      transition:
+        opacity 0.42s var(--ease-out-soft),
+        transform 0.42s var(--ease-out-soft);
+    }
   }
 
   /* ux: skip-links */
@@ -208,6 +224,16 @@
   }
 
   .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* Belt to Scenario's braces. The component already refuses to start the
+     script when this preference is set, so every step stays shown; this
+     covers the case where it somehow did start. */
+  .scenario-step,
+  .scenario-step[data-shown="false"] {
     opacity: 1;
     transform: none;
     transition: none;
